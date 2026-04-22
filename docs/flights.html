@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Delay Database · US Flight Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#090a0c;color:#e8e8e8;font-family:'IBM Plex Sans',sans-serif;min-height:100vh}
+    ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0d1623}::-webkit-scrollbar-thumb{background:#1a2d4a;border-radius:3px}
+    select option{background:#141618;color:#e8e8e8}
+  </style>
+</head>
+<body>
+<div id="root">
+  <div style="display:flex;align-items:center;justify-content:center;height:100vh;color:#444;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1px">
+    LOADING FLIGHT DATABASE...
+  </div>
+</div>
+
+<script type="text/babel">
+const { useState, useMemo, useRef, useEffect } = React;
+
+// ── Airline colours for known US carriers ─────────────────────────────────────
+const KNOWN_AIRLINES = [
+  { code:"AA", name:"American Airlines",  color:"#0078D4" },
+  { code:"DL", name:"Delta Air Lines",    color:"#E01933" },
+  { code:"UA", name:"United Airlines",    color:"#0047AB" },
+  { code:"WN", name:"Southwest Airlines", color:"#FF6900" },
+  { code:"B6", name:"JetBlue Airways",    color:"#0033A0" },
+  { code:"AS", name:"Alaska Airlines",    color:"#00569C" },
+  { code:"F9", name:"Frontier Airlines",  color:"#00843D" },
+  { code:"NK", name:"Spirit Airlines",    color:"#CCAA00" },
+  { code:"G4", name:"Allegiant Air",      color:"#FF6600" },
+  { code:"SY", name:"Sun Country",        color:"#0057A8" },
+  { code:"HA", name:"Hawaiian Airlines",  color:"#6B2D8B" },
+];
+const AIRLINE_COLOR_MAP = Object.fromEntries(KNOWN_AIRLINES.map(a => [a.code, a.color]));
+
+function airlineColor(code) { return AIRLINE_COLOR_MAP[code] || "#6b7280"; }
+
+// ── Delay badge ───────────────────────────────────────────────────────────────
+function delayBadge(delayMin, status) {
+  if (status === "On Time" || delayMin <= 0) return { label:"ON TIME", color:"#4ade80" };
+  if (delayMin > 60) return { label:`${delayMin}m`, color:"#ff4444" };
+  return { label:`${delayMin}m`, color:"#ff8c42" };
+}
+
+function fmtDate(str) {
+  if (!str) return "—";
+  const [y,m,d] = str.split("-");
+  return `${m}/${d}/${y}`;
+}
+
+// ── Sub-components ────────────────────────────────────────────────────────────
+function StatCard({ label, value, sub, accent }) {
+  return (
+    <div style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.07)",borderLeft:`3px solid ${accent}`,borderRadius:2,padding:"12px 15px",flex:1,minWidth:120}}>
+      <div style={{color:accent,fontFamily:"'Space Mono',monospace",fontSize:19,fontWeight:700}}>{value}</div>
+      <div style={{color:"#bbb",fontSize:10,letterSpacing:0.8,textTransform:"uppercase",marginTop:2}}>{label}</div>
+      {sub && <div style={{color:"#555",fontSize:10,marginTop:3}}>{sub}</div>}
+    </div>
+  );
+}
+
+function MiniBar({ label, value, max, color }) {
+  return (
+    <div style={{marginBottom:8}}>
+      <div style={{display:"flex",justifyContent:"space-between",marginBottom:3}}>
+        <span style={{color:"#999",fontSize:11}}>{label}</span>
+        <span style={{color,fontFamily:"monospace",fontSize:11}}>{value}</span>
+      </div>
+      <div style={{background:"rgba(255,255,255,0.06)",height:3,borderRadius:2}}>
+        <div style={{background:color,width:`${max>0?Math.min(100,(value/max)*100):0}%`,height:"100%",borderRadius:2,transition:"width 0.4s ease"}}/>
+      </div>
+    </div>
+  );
+}
+
+// ── Airline search dropdown ───────────────────────────────────────────────────
+function AirlineSearch({ value, onChange, airlines }) {
+  const [query, setQuery] = useState("");
+  const [open, setOpen]   = useState(false);
+  const ref = useRef(null);
+  const selected = value ? airlines.find(a => a.code === value) : null;
+  const matches  = useMemo(() => {
+    if (!query) return airlines;
+    const q = query.toLowerCase();
+    return airlines.filter(a => a.name.toLowerCase().includes(q) || a.code.toLowerCase().includes(q));
+  }, [query, airlines]);
+
+  useEffect(() => {
+    const h = e => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener("mousedown", h);
+    return () => document.removeEventListener("mousedown", h);
+  }, []);
+
+  return (
+    <div ref={ref} style={{position:"relative",width:260}}>
+      <label style={{color:"#555",fontSize:9,letterSpacing:1.5,textTransform:"uppercase",fontFamily:"'Space Mono',monospace",display:"block",marginBottom:5}}>Airline</label>
+      <div style={{display:"flex",alignItems:"center",gap:8,background:"rgba(255,255,255,0.04)",border:`1px solid ${selected?selected.color+"66":"rgba(255,255,255,0.12)"}`,borderRadius:3,padding:"7px 10px",cursor:"text"}} onClick={()=>setOpen(true)}>
+        {selected && <span style={{width:8,height:8,borderRadius:"50%",background:selected.color,flexShrink:0}}/>}
+        <input value={open?query:(selected?selected.name:"")} onChange={e=>{setQuery(e.target.value);setOpen(true);}} onFocus={()=>setOpen(true)} placeholder="Search airline…"
+          style={{background:"none",border:"none",outline:"none",color:selected&&!open?"#e8e8e8":"#aaa",fontSize:12,fontFamily:"'IBM Plex Sans',sans-serif",width:"100%",cursor:"text"}}/>
+        {selected&&!open&&<button onClick={e=>{e.stopPropagation();onChange(null);setQuery("");}} style={{background:"none",border:"none",color:"#555",cursor:"pointer",fontSize:14,lineHeight:1,padding:0,flexShrink:0}}>✕</button>}
+        <span style={{color:"#444",fontSize:10,flexShrink:0}}>{open?"▲":"▼"}</span>
+      </div>
+      {open && (
+        <div style={{position:"absolute",top:"calc(100% + 4px)",left:0,right:0,zIndex:100,background:"#141618",border:"1px solid rgba(255,255,255,0.12)",borderRadius:3,maxHeight:240,overflowY:"auto",boxShadow:"0 8px 24px rgba(0,0,0,0.6)"}}>
+          {matches.length===0
+            ? <div style={{padding:"12px 14px",color:"#555",fontSize:12}}>No airlines found</div>
+            : matches.map(a=>(
+              <div key={a.code} onClick={()=>{onChange(a.code);setQuery("");setOpen(false);}}
+                style={{display:"flex",alignItems:"center",gap:10,padding:"9px 14px",cursor:"pointer",fontSize:12,background:value===a.code?"rgba(255,255,255,0.05)":"transparent",borderBottom:"1px solid rgba(255,255,255,0.04)"}}
+                onMouseEnter={e=>e.currentTarget.style.background="rgba(255,255,255,0.07)"}
+                onMouseLeave={e=>e.currentTarget.style.background=value===a.code?"rgba(255,255,255,0.05)":"transparent"}>
+                <span style={{width:8,height:8,borderRadius:"50%",background:a.color,flexShrink:0}}/>
+                <span style={{color:"#e8e8e8"}}>{a.name}</span>
+                <span style={{marginLeft:"auto",fontFamily:"'Space Mono',monospace",fontSize:10,color:"#555"}}>{a.code}</span>
+              </div>
+            ))
+          }
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── Flight Lookup card (per-flight-number summary) ────────────────────────────
+function FlightLookup({ flights }) {
+  const [query, setQuery] = useState("");
+  const flightNum = query.trim().toUpperCase().replace(/\s+/g,"");
+
+  const matches = useMemo(() => {
+    if (!flightNum || flightNum.length < 3) return [];
+    return flights.filter(f => f.flight_iata.toUpperCase().includes(flightNum));
+  }, [flightNum, flights]);
+
+  const stats = useMemo(() => {
+    if (!matches.length) return null;
+    const total    = matches.length;
+    const delayed  = matches.filter(f => f.status !== "On Time").length;
+    const major    = matches.filter(f => f.status === "Major Delay").length;
+    const onTime   = total - delayed;
+    const avgDelay = delayed > 0
+      ? Math.round(matches.filter(f=>f.delay_min>0).reduce((s,f)=>s+f.delay_min,0)/delayed)
+      : 0;
+    const routes   = [...new Set(matches.map(f=>`${f.from}→${f.to}`))];
+    const onTimeRate = Math.round((onTime/total)*100);
+
+    let verdict = "", verdictColor = "#4ade80";
+    if (onTimeRate >= 85)      { verdict = "✈ Generally reliable";       verdictColor = "#4ade80"; }
+    else if (onTimeRate >= 65) { verdict = "⚠ Some delay risk";          verdictColor = "#ff8c42"; }
+    else                       { verdict = "✗ Frequently delayed";        verdictColor = "#ff4444"; }
+
+    return { total, delayed, major, onTime, avgDelay, onTimeRate, routes, verdict, verdictColor };
+  }, [matches]);
+
+  return (
+    <div style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.09)",borderRadius:3,padding:"16px 18px"}}>
+      <div style={{fontFamily:"'Space Mono',monospace",fontSize:9,letterSpacing:1.5,color:"#555",textTransform:"uppercase",marginBottom:12}}>✦ Flight Lookup</div>
+      <input value={query} onChange={e=>setQuery(e.target.value)} placeholder="e.g. AA123 or DL"
+        style={{width:"100%",background:"rgba(255,255,255,0.05)",border:"1px solid rgba(255,255,255,0.15)",color:"#e8e8e8",padding:"8px 12px",borderRadius:2,fontSize:13,fontFamily:"'Space Mono',monospace",outline:"none",letterSpacing:1,marginBottom:12}}/>
+
+      {flightNum.length >= 3 && !stats && (
+        <div style={{color:"#444",fontSize:11,textAlign:"center",padding:"8px 0"}}>No flights found for "{flightNum}"</div>
+      )}
+
+      {stats && (
+        <div>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
+            <span style={{fontFamily:"'Space Mono',monospace",fontSize:13,color:"#e8e8e8",letterSpacing:1}}>{matches[0].flight_iata}</span>
+            <span style={{background:`${stats.verdictColor}15`,border:`1px solid ${stats.verdictColor}44`,color:stats.verdictColor,fontSize:10,padding:"3px 9px",borderRadius:2,fontFamily:"'Space Mono',monospace"}}>{stats.verdict}</span>
+          </div>
+          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginBottom:12}}>
+            {[
+              {l:"On-Time Rate", v:`${stats.onTimeRate}%`, c:stats.onTimeRate>=80?"#4ade80":stats.onTimeRate>=60?"#ff8c42":"#ff4444"},
+              {l:"Avg Delay",    v:stats.avgDelay>0?`${stats.avgDelay}m`:"—", c:"#ff8c42"},
+              {l:"Times Tracked",v:stats.total,   c:"#e8e8e8"},
+              {l:"Major Delays", v:stats.major,   c:"#ff4444"},
+            ].map(({l,v,c})=>(
+              <div key={l} style={{background:"rgba(255,255,255,0.03)",borderRadius:2,padding:"8px 10px"}}>
+                <div style={{color:c,fontFamily:"'Space Mono',monospace",fontSize:16,fontWeight:700}}>{v}</div>
+                <div style={{color:"#555",fontSize:9,letterSpacing:0.8,textTransform:"uppercase",marginTop:2}}>{l}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{fontSize:10,color:"#555",marginBottom:6}}>ROUTES OBSERVED</div>
+          {stats.routes.map(r=>(
+            <div key={r} style={{fontFamily:"'Space Mono',monospace",fontSize:11,color:"#888",marginBottom:3}}>{r}</div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── Main component ────────────────────────────────────────────────────────────
+function FlightDatabase() {
+  const [allFlights, setAllFlights]     = useState([]);
+  const [dataLoading, setDataLoading]   = useState(true);
+  const [loadProgress, setLoadProgress] = useState({loaded:0, total:1});
+
+  const [selectedAirline, setSelectedAirline] = useState(null);
+  const [dateFrom,  setDateFrom]  = useState("");
+  const [dateTo,    setDateTo]    = useState("");
+  const [fromAirport, setFromAirport] = useState("ALL");
+  const [toAirport,   setToAirport]   = useState("ALL");
+  const [filterStatus, setFilterStatus] = useState("ALL");
+  const [search,       setSearch]       = useState("");
+  const [sortBy,       setSortBy]       = useState("date");
+  const [page,         setPage]         = useState(0);
+  const [activeTab,    setActiveTab]    = useState("table");
+  const PER_PAGE = 20;
+
+  // ── Load data ─────────────────────────────────────────────────────────────
+  useEffect(() => {
+    fetch("./data/flights-log.json?t=" + Date.now())
+      .then(r => r.json())
+      .then(data => {
+        setAllFlights(data);
+        if (data.length) {
+          const dates = data.map(f => f.date).sort();
+          setDateFrom(dates[dates.length-1]); // default to most recent day
+          setDateTo(dates[dates.length-1]);
+        }
+      })
+      .catch(e => console.error("Failed to load flights-log.json", e))
+      .finally(() => setDataLoading(false));
+  }, []);
+
+  // ── Derived state ─────────────────────────────────────────────────────────
+  const dateRange = useMemo(() => {
+    if (!allFlights.length) return { min:"", max:"" };
+    const dates = allFlights.map(f => f.date).sort();
+    return { min: dates[0], max: dates[dates.length-1] };
+  }, [allFlights]);
+
+  const airlines = useMemo(() => {
+    const seen = new Map();
+    for (const f of allFlights) {
+      if (f.airline_iata && !seen.has(f.airline_iata))
+        seen.set(f.airline_iata, f.airline_name || f.airline_iata);
+    }
+    return [...seen.entries()]
+      .map(([code, name]) => ({ code, name, color: airlineColor(code) }))
+      .sort((a,b) => a.name.localeCompare(b.name));
+  }, [allFlights]);
+
+  const airlineFlights = useMemo(() =>
+    selectedAirline ? allFlights.filter(f => f.airline_iata === selectedAirline) : allFlights,
+  [allFlights, selectedAirline]);
+
+  const availableFrom = useMemo(() => {
+    const src = toAirport==="ALL" ? airlineFlights : airlineFlights.filter(f=>f.to===toAirport);
+    return [...new Set(src.map(f=>f.from).filter(Boolean))].sort();
+  }, [airlineFlights, toAirport]);
+
+  const availableTo = useMemo(() => {
+    const src = fromAirport==="ALL" ? airlineFlights : airlineFlights.filter(f=>f.from===fromAirport);
+    return [...new Set(src.map(f=>f.to).filter(Boolean))].sort();
+  }, [airlineFlights, fromAirport]);
+
+  const hasFilters = selectedAirline || (dateFrom!==dateRange.max) || (dateTo!==dateRange.max)
+    || fromAirport!=="ALL" || toAirport!=="ALL" || filterStatus!=="ALL" || search!=="";
+
+  const resetAll = () => {
+    setSelectedAirline(null); setDateFrom(dateRange.max); setDateTo(dateRange.max);
+    setFromAirport("ALL"); setToAirport("ALL"); setFilterStatus("ALL"); setSearch(""); setPage(0);
+  };
+
+  const handleAirlineChange = code => {
+    setSelectedAirline(code); setFromAirport("ALL"); setToAirport("ALL"); setPage(0);
+  };
+
+  // ── Filtering ─────────────────────────────────────────────────────────────
+  const filtered = useMemo(() => {
+    let f = airlineFlights.filter(fl => {
+      if (dateFrom && fl.date < dateFrom) return false;
+      if (dateTo   && fl.date > dateTo)   return false;
+      if (fromAirport!=="ALL" && fl.from!==fromAirport) return false;
+      if (toAirport!=="ALL"   && fl.to!==toAirport)     return false;
+      if (filterStatus!=="ALL" && fl.status!==filterStatus) return false;
+      if (search) {
+        const q = search.toUpperCase();
+        if (!fl.flight_iata.toUpperCase().includes(q) && !fl.from.includes(q) && !fl.to.includes(q)) return false;
+      }
+      return true;
+    });
+    if (sortBy==="delay")  f = [...f].sort((a,b)=>b.delay_min-a.delay_min);
+    if (sortBy==="date")   f = [...f].sort((a,b)=>b.date.localeCompare(a.date));
+    if (sortBy==="flight") f = [...f].sort((a,b)=>a.flight_iata.localeCompare(b.flight_iata));
+    return f;
+  }, [airlineFlights, dateFrom, dateTo, fromAirport, toAirport, filterStatus, search, sortBy]);
+
+  const paged      = filtered.slice(page*PER_PAGE, (page+1)*PER_PAGE);
+  const totalPages = Math.ceil(filtered.length/PER_PAGE);
+
+  // ── Analytics ─────────────────────────────────────────────────────────────
+  const analytics = useMemo(() => {
+    if (!filtered.length) return null;
+    const delayed   = filtered.filter(f=>f.status!=="On Time");
+    const major     = filtered.filter(f=>f.status==="Major Delay");
+    const onTime    = filtered.filter(f=>f.status==="On Time");
+    const avgDelay  = delayed.length ? Math.round(delayed.reduce((s,f)=>s+f.delay_min,0)/delayed.length) : 0;
+    const onTimeRate = Math.round((onTime.length/filtered.length)*100);
+
+    const routeMap = {};
+    filtered.forEach(f => {
+      const k = `${f.from}→${f.to}`;
+      if (!routeMap[k]) routeMap[k] = { total:0, delayed:0, totalDelay:0 };
+      routeMap[k].total++;
+      if (f.status!=="On Time") { routeMap[k].delayed++; routeMap[k].totalDelay+=f.delay_min; }
+    });
+    const topRoutes = Object.entries(routeMap)
+      .sort((a,b)=>b[1].total-a[1].total).slice(0,8)
+      .map(([route,s]) => ({ route, ...s, avgDelay: s.delayed?Math.round(s.totalDelay/s.delayed):0,
+        delayRate: Math.round((s.delayed/s.total)*100) }));
+
+    return { total:filtered.length, delayed:delayed.length, major:major.length, onTime:onTime.length, avgDelay, onTimeRate, topRoutes };
+  }, [filtered]);
+
+  const activeAirline = selectedAirline ? airlines.find(a=>a.code===selectedAirline) : null;
+
+  // ── Styles ────────────────────────────────────────────────────────────────
+  const inputSt = {background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.12)",color:"#e8e8e8",padding:"6px 10px",borderRadius:2,fontSize:12,fontFamily:"'Space Mono',monospace",outline:"none"};
+  const sel   = {background:"rgba(255,255,255,0.08)",border:"1px solid rgba(255,255,255,0.18)",color:"#e8e8e8",borderRadius:2,padding:"5px 10px",fontSize:10,cursor:"pointer",fontFamily:"'Space Mono',monospace"};
+  const unsel = {background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.07)",color:"#555",borderRadius:2,padding:"5px 10px",fontSize:10,cursor:"pointer",fontFamily:"'Space Mono',monospace"};
+  const pill  = {background:"rgba(255,255,255,0.05)",border:"1px solid rgba(255,255,255,0.1)",color:"#888",fontSize:10,padding:"2px 8px",borderRadius:20,fontFamily:"'Space Mono',monospace"};
+
+  // ── Loading screen ────────────────────────────────────────────────────────
+  if (dataLoading) {
+    return (
+      <div style={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",height:"100vh",gap:16}}>
+        <div style={{fontFamily:"'Space Mono',monospace",fontSize:12,letterSpacing:2,color:"#444"}}>LOADING FLIGHT DATABASE...</div>
+        <div style={{width:200,height:2,background:"rgba(255,255,255,0.06)",borderRadius:2}}>
+          <div style={{height:"100%",background:"#00c8ff",borderRadius:2,width:`${(loadProgress.loaded/loadProgress.total)*100}%`,transition:"width 0.3s"}}/>
+        </div>
+      </div>
+    );
+  }
+
+  if (!allFlights.length) {
+    return (
+      <div style={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",height:"100vh",gap:12,color:"#444",fontFamily:"'Space Mono',monospace",fontSize:12,textAlign:"center"}}>
+        <div style={{fontSize:24}}>✈</div>
+        <div>No flight data collected yet.</div>
+        <div style={{fontSize:10,color:"#333"}}>The nightly collector runs at 9 PM ET.<br/>Data will appear here after the first run.</div>
+        <a href="./index.html" style={{marginTop:8,color:"#00c8ff",textDecoration:"none",fontSize:10}}>← Back to Dashboard</a>
+      </div>
+    );
+  }
+
+  return (
+    <div style={{minHeight:"100vh",background:"#090a0c",color:"#e8e8e8",fontFamily:"'IBM Plex Sans',sans-serif"}}>
+
+      {/* Header */}
+      <div style={{borderBottom:"1px solid rgba(255,255,255,0.07)",padding:"14px 28px",display:"flex",alignItems:"center",gap:14,background:"rgba(255,255,255,0.012)"}}>
+        <span style={{fontSize:18}}>✈</span>
+        <div>
+          <div style={{fontFamily:"'Space Mono',monospace",fontWeight:700,fontSize:13,letterSpacing:2,color:"#e8e8e8"}}>
+            FLIGHT DELAY DATABASE
+            {activeAirline && <span style={{marginLeft:12,color:activeAirline.color,fontSize:12}}>· {activeAirline.name}</span>}
+          </div>
+          <div style={{color:"#444",fontSize:10,letterSpacing:0.5,marginTop:1}}>
+            Historical delay log · {allFlights.length.toLocaleString()} flights · {[...new Set(allFlights.map(f=>f.date))].length} days collected
+          </div>
+        </div>
+        <div style={{marginLeft:"auto",display:"flex",alignItems:"center",gap:12}}>
+          <span style={{background:"rgba(0,200,255,0.08)",border:"1px solid rgba(0,200,255,0.25)",color:"#00c8ff",fontSize:9,letterSpacing:1,padding:"3px 9px",borderRadius:2,fontFamily:"'Space Mono',monospace"}}>
+            ● LIVE DATA
+          </span>
+          <a href="./index.html" style={{color:"#444",fontSize:10,fontFamily:"'Space Mono',monospace",letterSpacing:1,textDecoration:"none",border:"1px solid rgba(255,255,255,0.07)",padding:"4px 10px",borderRadius:2}}>
+            ← DASHBOARD
+          </a>
+        </div>
+      </div>
+
+      <div style={{padding:"20px 28px",maxWidth:1400,margin:"0 auto"}}>
+
+        {/* ── Filter Panel ── */}
+        <div style={{background:"rgba(255,255,255,0.025)",border:`1px solid ${activeAirline?activeAirline.color+"33":"rgba(255,255,255,0.07)"}`,borderRadius:3,padding:"18px 20px",marginBottom:18,transition:"border-color 0.3s"}}>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16}}>
+            <span style={{fontFamily:"'Space Mono',monospace",fontSize:9,letterSpacing:1.5,color:"#555",textTransform:"uppercase"}}>▸ Filter Flights</span>
+            {hasFilters && <button onClick={resetAll} style={{background:"none",border:"1px solid #222",color:"#555",borderRadius:2,padding:"3px 10px",fontSize:9,cursor:"pointer",fontFamily:"'Space Mono',monospace"}}>RESET ALL</button>}
+          </div>
+
+          <div style={{display:"flex",gap:18,flexWrap:"wrap",alignItems:"flex-end"}}>
+
+            {/* Airline */}
+            <AirlineSearch value={selectedAirline} onChange={handleAirlineChange} airlines={airlines}/>
+
+            <div style={{width:1,height:46,background:"rgba(255,255,255,0.06)",alignSelf:"center"}}/>
+
+            {/* Date range */}
+            <div style={{display:"flex",gap:10,alignItems:"flex-end"}}>
+              {[["From Date",dateFrom,setDateFrom,"from"],["To Date",dateTo,setDateTo,"to"]].map(([label,val,setter,dir],i)=>(
+                <div key={dir} style={{display:"flex",flexDirection:"column",gap:4}}>
+                  <label style={{color:"#555",fontSize:9,letterSpacing:1.5,textTransform:"uppercase",fontFamily:"'Space Mono',monospace"}}>{label}</label>
+                  <input type="date" value={val} min={dateRange.min} max={dateRange.max}
+                    onChange={e=>{setter(e.target.value);setPage(0);}}
+                    style={{background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.12)",color:"#e8e8e8",padding:"6px 10px",borderRadius:2,fontSize:12,fontFamily:"'Space Mono',monospace",outline:"none",colorScheme:"dark",cursor:"pointer"}}/>
+                </div>
+              ))}
+            </div>
+
+            <div style={{width:1,height:46,background:"rgba(255,255,255,0.06)",alignSelf:"center"}}/>
+
+            {/* Route */}
+            <div style={{display:"flex",gap:10,alignItems:"flex-end"}}>
+              {[["Origin",fromAirport,availableFrom,"Any Origin",v=>{setFromAirport(v);setToAirport("ALL");setPage(0);}],
+                ["Destination",toAirport,availableTo,"Any Dest.",v=>{setToAirport(v);setPage(0);}]].map(([label,val,opts,ph,handler])=>(
+                <div key={label} style={{display:"flex",flexDirection:"column",gap:4}}>
+                  <label style={{color:"#555",fontSize:9,letterSpacing:1.5,textTransform:"uppercase",fontFamily:"'Space Mono',monospace"}}>{label}</label>
+                  <select value={val} onChange={e=>handler(e.target.value)} style={{...inputSt,cursor:"pointer"}}>
+                    <option value="ALL">{ph}</option>
+                    {opts.map(a=><option key={a} value={a}>{a}</option>)}
+                  </select>
+                </div>
+              ))}
+            </div>
+
+            <div style={{width:1,height:46,background:"rgba(255,255,255,0.06)",alignSelf:"center"}}/>
+
+            {/* Status */}
+            <div style={{display:"flex",flexDirection:"column",gap:4}}>
+              <label style={{color:"#555",fontSize:9,letterSpacing:1.5,textTransform:"uppercase",fontFamily:"'Space Mono',monospace"}}>Status</label>
+              <select value={filterStatus} onChange={e=>{setFilterStatus(e.target.value);setPage(0);}} style={{...inputSt,cursor:"pointer"}}>
+                <option value="ALL">All</option>
+                <option value="On Time">On Time</option>
+                <option value="Minor Delay">Minor Delay</option>
+                <option value="Major Delay">Major Delay</option>
+              </select>
+            </div>
+
+            {/* Flight search */}
+            <div style={{display:"flex",flexDirection:"column",gap:4,marginLeft:"auto"}}>
+              <label style={{color:"#555",fontSize:9,letterSpacing:1.5,textTransform:"uppercase",fontFamily:"'Space Mono',monospace"}}>Search Flight / Airport</label>
+              <input value={search} onChange={e=>{setSearch(e.target.value);setPage(0);}} placeholder="e.g. AA123 or ATL"
+                style={{...inputSt,width:180}}/>
+            </div>
+          </div>
+
+          {/* Active filter pills */}
+          {hasFilters && (
+            <div style={{marginTop:13,display:"flex",gap:5,flexWrap:"wrap"}}>
+              {activeAirline && <span style={{...pill,background:`${activeAirline.color}18`,borderColor:`${activeAirline.color}44`,color:activeAirline.color}}>{activeAirline.name}</span>}
+              {dateFrom!==dateRange.max && <span style={pill}>from: {fmtDate(dateFrom)}</span>}
+              {dateTo!==dateRange.max   && <span style={pill}>to: {fmtDate(dateTo)}</span>}
+              {fromAirport!=="ALL" && <span style={pill}>origin: {fromAirport}</span>}
+              {toAirport!=="ALL"   && <span style={pill}>dest: {toAirport}</span>}
+              {filterStatus!=="ALL"&& <span style={pill}>{filterStatus}</span>}
+              {search && <span style={pill}>"{search}"</span>}
+            </div>
+          )}
+        </div>
+
+        {/* ── Stats row ── */}
+        <div style={{display:"flex",gap:10,marginBottom:18,flexWrap:"wrap"}}>
+          <StatCard label="Flights Shown"  value={filtered.length.toLocaleString()} sub={`of ${allFlights.length.toLocaleString()} total`} accent={activeAirline?.color||"#e8e8e8"}/>
+          <StatCard label="On-Time Rate"   value={analytics?`${analytics.onTimeRate}%`:"—"}      sub="filtered set" accent="#4ade80"/>
+          <StatCard label="Avg Delay"      value={analytics&&analytics.avgDelay>0?`${analytics.avgDelay}m`:"—"} sub="when delayed" accent="#ff8c42"/>
+          <StatCard label="Major Delays"   value={analytics?.major??0}  sub=">60 min"  accent="#ff4444"/>
+          <StatCard label="Days in Range"  value={[...new Set(filtered.map(f=>f.date))].length} sub="days of data" accent="#00c8ff"/>
+        </div>
+
+        {/* ── Tabs ── */}
+        <div style={{display:"flex",gap:4,marginBottom:14}}>
+          {[["table","Flight Log"],["routes","Routes"],["airlines","Airlines"]].map(([k,l])=>(
+            <button key={k} onClick={()=>setActiveTab(k)} style={activeTab===k?sel:unsel}>{l}</button>
+          ))}
+        </div>
+
+        {/* ── Main layout ── */}
+        <div style={{display:"flex",gap:20,flexWrap:"wrap"}}>
+
+          {/* Main panel */}
+          <div style={{flex:3,minWidth:300}}>
+
+            {/* Flight Log tab */}
+            {activeTab==="table" && (
+              <>
+                <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
+                  <span style={{color:"#444",fontSize:11,fontFamily:"'Space Mono',monospace"}}>{filtered.length} result{filtered.length!==1?"s":""}</span>
+                  <div style={{display:"flex",gap:3,alignItems:"center"}}>
+                    <span style={{color:"#444",fontSize:9,marginRight:4,letterSpacing:1}}>SORT:</span>
+                    {[["date","NEWEST"],["delay","WORST DELAY"],["flight","FLIGHT #"]].map(([k,l])=>(
+                      <button key={k} onClick={()=>setSortBy(k)} style={sortBy===k?sel:unsel}>{l}</button>
+                    ))}
+                  </div>
+                </div>
+
+                <div style={{border:"1px solid rgba(255,255,255,0.07)",borderRadius:3,overflow:"hidden"}}>
+                  <div style={{display:"grid",gridTemplateColumns:"10px 130px 90px 55px 55px 60px 110px 1fr",background:"rgba(255,255,255,0.04)",padding:"8px 14px",fontSize:9,letterSpacing:1.2,color:"#555",textTransform:"uppercase",fontFamily:"'Space Mono',monospace",gap:8}}>
+                    <span/><span>Flight</span><span>Date</span><span>From</span><span>To</span><span>Sched</span><span>Delay</span><span>Airline</span>
+                  </div>
+
+                  {paged.length===0 ? (
+                    <div style={{padding:"40px 0",textAlign:"center"}}>
+                      <div style={{fontSize:26,marginBottom:10}}>✈</div>
+                      <div style={{color:"#444",fontSize:13}}>No flights match your filters</div>
+                      <button onClick={resetAll} style={{marginTop:12,...unsel,color:"#555"}}>Clear filters</button>
+                    </div>
+                  ) : paged.map((fl,i)=>{
+                    const badge = delayBadge(fl.delay_min, fl.status);
+                    const color = airlineColor(fl.airline_iata);
+                    return (
+                      <div key={fl.id} style={{display:"grid",gridTemplateColumns:"10px 130px 90px 55px 55px 60px 110px 1fr",padding:"9px 14px",fontSize:12,background:i%2===0?"transparent":"rgba(255,255,255,0.013)",borderTop:"1px solid rgba(255,255,255,0.04)",alignItems:"center",gap:8}}>
+                        <span style={{width:7,height:7,borderRadius:"50%",background:color,display:"inline-block"}} title={fl.airline_name}/>
+                        <span style={{fontFamily:"'Space Mono',monospace",color,fontSize:11}}>{fl.flight_iata||"—"}</span>
+                        <span style={{color:"#666",fontSize:11}}>{fl.date}</span>
+                        <span style={{color:"#ccc",fontWeight:500}}>{fl.from}</span>
+                        <span style={{color:"#ccc",fontWeight:500}}>{fl.to}</span>
+                        <span style={{color:"#555",fontSize:11,fontFamily:"monospace"}}>{fl.scheduled_dep}</span>
+                        <span>
+                          <span style={{background:`${badge.color}18`,border:`1px solid ${badge.color}44`,color:badge.color,fontFamily:"'Space Mono',monospace",fontSize:10,padding:"2px 7px",borderRadius:2,whiteSpace:"nowrap"}}>{badge.label}</span>
+                        </span>
+                        <span style={{color:"#555",fontSize:11,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{fl.airline_name||fl.airline_iata}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginTop:12}}>
+                  <span style={{color:"#444",fontSize:11,fontFamily:"'Space Mono',monospace"}}>pg {Math.min(page+1,totalPages||1)}/{totalPages||1}</span>
+                  <div style={{display:"flex",gap:4}}>
+                    {[["«",()=>setPage(0),page===0],["‹",()=>setPage(p=>Math.max(0,p-1)),page===0],
+                      ["›",()=>setPage(p=>Math.min(totalPages-1,p+1)),page>=totalPages-1],["»",()=>setPage(totalPages-1),page>=totalPages-1]
+                    ].map(([l,fn,dis],i)=>(
+                      <button key={i} onClick={fn} disabled={dis} style={{...unsel,opacity:dis?0.25:1}}>{l}</button>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
+
+            {/* Routes tab */}
+            {activeTab==="routes" && (
+              <div style={{border:"1px solid rgba(255,255,255,0.07)",borderRadius:3,overflow:"hidden"}}>
+                <div style={{display:"grid",gridTemplateColumns:"1fr 80px 90px 90px 90px",background:"rgba(255,255,255,0.04)",padding:"9px 14px",fontSize:9,letterSpacing:1.2,color:"#555",textTransform:"uppercase",fontFamily:"'Space Mono',monospace"}}>
+                  <span>Route</span><span>Flights</span><span>On-Time %</span><span>Avg Delay</span><span>Major</span>
+                </div>
+                {analytics?.topRoutes.length ? analytics.topRoutes.map((r,i)=>(
+                  <div key={r.route} style={{display:"grid",gridTemplateColumns:"1fr 80px 90px 90px 90px",padding:"10px 14px",fontSize:12,background:i%2===0?"transparent":"rgba(255,255,255,0.013)",borderTop:"1px solid rgba(255,255,255,0.04)",alignItems:"center"}}>
+                    <span style={{fontFamily:"'Space Mono',monospace",color:"#ccc",fontSize:12}}>{r.route}</span>
+                    <span style={{fontFamily:"'Space Mono',monospace",color:"#e8e8e8"}}>{r.total}</span>
+                    <span style={{fontFamily:"'Space Mono',monospace",color:r.delayRate<20?"#4ade80":r.delayRate<50?"#ff8c42":"#ff4444"}}>{100-r.delayRate}%</span>
+                    <span style={{fontFamily:"'Space Mono',monospace",color:"#ff8c42"}}>{r.avgDelay>0?`${r.avgDelay}m`:"—"}</span>
+                    <span style={{fontFamily:"'Space Mono',monospace",color:"#ff4444"}}>{filtered.filter(f=>`${f.from}→${f.to}`===r.route&&f.status==="Major Delay").length}</span>
+                  </div>
+                )) : <div style={{padding:"32px 0",textAlign:"center",color:"#444",fontSize:13}}>No route data for current filters</div>}
+              </div>
+            )}
+
+            {/* Airlines tab */}
+            {activeTab==="airlines" && (
+              <div style={{border:"1px solid rgba(255,255,255,0.07)",borderRadius:3,overflow:"hidden"}}>
+                <div style={{display:"grid",gridTemplateColumns:"1fr 80px 90px 90px",background:"rgba(255,255,255,0.04)",padding:"9px 14px",fontSize:9,letterSpacing:1.2,color:"#555",textTransform:"uppercase",fontFamily:"'Space Mono',monospace"}}>
+                  <span>Airline</span><span>Flights</span><span>On-Time %</span><span>Avg Delay</span>
+                </div>
+                {(() => {
+                  const map = {};
+                  filtered.forEach(f => {
+                    const k = f.airline_iata;
+                    if (!map[k]) map[k] = {name:f.airline_name||k,total:0,delayed:0,totalDelay:0};
+                    map[k].total++;
+                    if(f.status!=="On Time"){map[k].delayed++;map[k].totalDelay+=f.delay_min;}
+                  });
+                  return Object.entries(map).sort((a,b)=>b[1].total-a[1].total).map(([code,s],i)=>(
+                    <div key={code} style={{display:"grid",gridTemplateColumns:"1fr 80px 90px 90px",padding:"10px 14px",fontSize:12,background:i%2===0?"transparent":"rgba(255,255,255,0.013)",borderTop:"1px solid rgba(255,255,255,0.04)",alignItems:"center"}}>
+                      <div style={{display:"flex",alignItems:"center",gap:8}}>
+                        <span style={{width:8,height:8,borderRadius:"50%",background:airlineColor(code),flexShrink:0}}/>
+                        <span style={{color:"#ccc"}}>{s.name}</span>
+                        <span style={{fontFamily:"'Space Mono',monospace",fontSize:10,color:"#444"}}>{code}</span>
+                      </div>
+                      <span style={{fontFamily:"'Space Mono',monospace",color:"#e8e8e8"}}>{s.total}</span>
+                      <span style={{fontFamily:"'Space Mono',monospace",color:((s.total-s.delayed)/s.total*100)>=80?"#4ade80":"#ff8c42"}}>{Math.round((s.total-s.delayed)/s.total*100)}%</span>
+                      <span style={{fontFamily:"'Space Mono',monospace",color:"#ff8c42"}}>{s.delayed>0?`${Math.round(s.totalDelay/s.delayed)}m`:"—"}</span>
+                    </div>
+                  ));
+                })()}
+              </div>
+            )}
+          </div>
+
+          {/* Sidebar */}
+          <div style={{flex:"0 0 260px",display:"flex",flexDirection:"column",gap:14}}>
+
+            {/* Flight Lookup */}
+            <FlightLookup flights={allFlights}/>
+
+            {/* On-Time breakdown */}
+            <div style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.07)",borderRadius:3,padding:"14px 16px"}}>
+              <div style={{fontFamily:"'Space Mono',monospace",fontSize:9,letterSpacing:1.5,color:"#555",textTransform:"uppercase",marginBottom:12}}>Status Breakdown</div>
+              {analytics ? [
+                {label:"On Time",    value:analytics.onTime,   color:"#4ade80"},
+                {label:"Minor Delay",value:analytics.delayed-analytics.major, color:"#ff8c42"},
+                {label:"Major Delay",value:analytics.major,    color:"#ff4444"},
+              ].map(({label,value,color})=><MiniBar key={label} label={label} value={value} max={analytics.total} color={color}/>) :
+                <div style={{color:"#333",fontSize:11,textAlign:"center",padding:12}}>No data</div>}
+            </div>
+
+            {/* Data coverage */}
+            <div style={{background:"rgba(255,255,255,0.015)",border:"1px solid rgba(255,255,255,0.05)",borderRadius:3,padding:"12px 14px"}}>
+              <div style={{fontFamily:"'Space Mono',monospace",fontSize:9,letterSpacing:1.5,color:"#444",textTransform:"uppercase",marginBottom:10}}>Data Coverage</div>
+              {[...new Set(allFlights.map(f=>f.date))].sort().reverse().map(date=>{
+                const dayFlights = allFlights.filter(f=>f.date===date);
+                const delayed    = dayFlights.filter(f=>f.status!=="On Time").length;
+                const rate       = Math.round((delayed/dayFlights.length)*100);
+                return (
+                  <div key={date} style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:6}}>
+                    <span style={{fontFamily:"'Space Mono',monospace",fontSize:10,color:"#666"}}>{date}</span>
+                    <div style={{display:"flex",gap:8,alignItems:"center"}}>
+                      <span style={{color:"#444",fontSize:10}}>{dayFlights.length} flights</span>
+                      <span style={{fontFamily:"'Space Mono',monospace",fontSize:10,color:rate<20?"#4ade80":rate<50?"#ff8c42":"#ff4444"}}>{rate}% delayed</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<FlightDatabase/>);
+</script>
+</body>
+</html>

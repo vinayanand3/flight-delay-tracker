@@ -211,6 +211,56 @@ def save_daily_data(date_str: str, flights: list, summary: dict):
     print(f"  ✓ Updated index.json ({len(index)} days)")
 
 
+# ─── Flight Log (lightweight rolling 30-day file for the React UI) ─────────────
+
+def save_flight_log(flights: list, date_str: str):
+    """Maintain a compact rolling 30-day log used by the flight database UI."""
+    log_file = Path("docs/data/flights-log.json")
+
+    existing = []
+    if log_file.exists():
+        try:
+            existing = json.loads(log_file.read_text())
+        except Exception:
+            existing = []
+
+    cutoff = (datetime.date.fromisoformat(date_str) - datetime.timedelta(days=30)).isoformat()
+    existing = [e for e in existing if e.get("date", "") >= cutoff and e.get("date") != date_str]
+
+    for f in flights:
+        scheduled = f["departure"].get("scheduled", "")
+        sched_dep = scheduled[11:16] if len(scheduled) >= 16 else "—"
+
+        cat = f["delay_category"]
+        delay = f["max_delay_minutes"]
+        if cat in ("significant", "severe") or delay > 60:
+            status = "Major Delay"
+        elif cat in ("moderate", "minor"):
+            status = "Minor Delay"
+        else:
+            status = "On Time"
+
+        existing.append({
+            "id": f"{date_str}-{f['flight_iata'] or f['flight_icao']}",
+            "date": date_str,
+            "airline_iata": f["airline_iata"],
+            "airline_name": f["airline_name"],
+            "flight_iata": f["flight_iata"] or f["flight_icao"] or "",
+            "from": f["departure"]["iata"],
+            "to": f["arrival"]["iata"],
+            "scheduled_dep": sched_dep,
+            "delay_min": delay,
+            "status": status,
+        })
+
+    existing.sort(key=lambda x: (x["date"], x["flight_iata"]), reverse=True)
+
+    with open(log_file, "w") as fh:
+        json.dump(existing, fh, separators=(",", ":"))
+    days = len({e["date"] for e in existing})
+    print(f"  ✓ Updated flights-log.json ({len(existing)} flights across {days} days)")
+
+
 # ─── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -236,6 +286,7 @@ def main():
     print("\n[3/3] Building summary and saving...")
     summary = build_summary(flights, today)
     save_daily_data(today, flights, summary)
+    save_flight_log(flights, today)
 
     print(f"\n✅ Done! Collected {summary['totals']['flights']} flights")
     print(f"   Delayed: {summary['totals']['delayed']} ({summary['totals']['delay_rate_pct']}%)")
