@@ -201,8 +201,8 @@ def save_daily_data(date_str: str, flights: list, summary: dict):
         except Exception:
             index = []
 
-    # Upsert this date's summary
-    index = [e for e in index if e.get("date") != date_str]
+    # Upsert this date's summary, stripping any placeholder entries
+    index = [e for e in index if e.get("date") != date_str and not str(e.get("date", "")).startswith("SAMPLE")]
     index.append(summary)
     index.sort(key=lambda x: x["date"])
 
