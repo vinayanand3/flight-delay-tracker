@@ -183,7 +183,7 @@ def build_summary(flights: list, date_str: str) -> dict:
 
 def save_daily_data(date_str: str, flights: list, summary: dict):
     """Save raw flights and summary for a given date."""
-    data_dir = Path("data")
+    data_dir = Path("docs/data")
     data_dir.mkdir(exist_ok=True)
 
     # Save full flight records
