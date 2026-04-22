@@ -448,7 +448,7 @@ function FlightDatabase() {
             {activeAirline && <span style={{marginLeft:12,color:activeAirline.color,fontSize:12}}>· {activeAirline.name}</span>}
           </div>
           <div style={{color:"#444",fontSize:10,letterSpacing:0.5,marginTop:1}}>
-            Historical delay log · {allFlights.length.toLocaleString()} flights · {[...new Set(allFlights.map(f=>f.date))].length} days collected
+            Historical delay log · {allFlights.length.toLocaleString()} flights · {[...new Set(allFlights.map(f=>f.date))].length} days · 180-day rolling window
           </div>
         </div>
         <div style={{marginLeft:"auto",display:"flex",alignItems:"center",gap:12}}>

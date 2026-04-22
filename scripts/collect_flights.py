@@ -210,6 +210,13 @@ def save_daily_data(date_str: str, flights: list, summary: dict):
         json.dump(index, f, indent=2)
     print(f"  ✓ Updated index.json ({len(index)} days)")
 
+    # Remove daily snapshot files older than 180 days to keep repo size flat
+    cutoff = (datetime.date.fromisoformat(date_str) - datetime.timedelta(days=180)).isoformat()
+    for old_file in data_dir.glob("????-??-??.json"):
+        if old_file.stem < cutoff:
+            old_file.unlink()
+            print(f"  🗑 Removed old snapshot {old_file.name}")
+
 
 # ─── Flight Log (lightweight rolling 30-day file for the React UI) ─────────────
 
@@ -224,7 +231,7 @@ def save_flight_log(flights: list, date_str: str):
         except Exception:
             existing = []
 
-    cutoff = (datetime.date.fromisoformat(date_str) - datetime.timedelta(days=30)).isoformat()
+    cutoff = (datetime.date.fromisoformat(date_str) - datetime.timedelta(days=180)).isoformat()
     existing = [e for e in existing if e.get("date", "") >= cutoff and e.get("date") != date_str]
 
     for f in flights:
