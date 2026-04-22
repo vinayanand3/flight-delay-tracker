@@ -130,58 +130,131 @@ function AirlineSearch({ value, onChange, airlines }) {
   );
 }
 
-// ── Flight Lookup card (per-flight-number summary) ────────────────────────────
+// ── "Should I Take This Flight?" wizard ──────────────────────────────────────
 function FlightLookup({ flights }) {
-  const [query, setQuery] = useState("");
-  const flightNum = query.trim().toUpperCase().replace(/\s+/g,"");
+  const [airline, setAirline] = useState("");
+  const [from,    setFrom]    = useState("ALL");
+  const [to,      setTo]      = useState("ALL");
+
+  const selSt = {width:"100%",background:"rgba(255,255,255,0.04)",border:"1px solid rgba(255,255,255,0.12)",color:"#e8e8e8",padding:"7px 10px",borderRadius:2,fontSize:12,fontFamily:"'Space Mono',monospace",outline:"none",cursor:"pointer",marginBottom:10};
+  const lblSt = {color:"#555",fontSize:9,letterSpacing:1.5,textTransform:"uppercase",fontFamily:"'Space Mono',monospace",display:"block",marginBottom:4};
+
+  const airlines = useMemo(() => {
+    const seen = new Map();
+    for (const f of flights)
+      if (f.airline_iata && !seen.has(f.airline_iata))
+        seen.set(f.airline_iata, f.airline_name || f.airline_iata);
+    return [...seen.entries()]
+      .map(([code, name]) => ({code, name, color: airlineColor(code)}))
+      .sort((a,b) => a.name.localeCompare(b.name));
+  }, [flights]);
+
+  const fromAirports = useMemo(() => {
+    const src = airline ? flights.filter(f => f.airline_iata === airline) : flights;
+    return [...new Set(src.map(f => f.from).filter(Boolean))].sort();
+  }, [flights, airline]);
+
+  const toAirports = useMemo(() => {
+    let src = airline ? flights.filter(f => f.airline_iata === airline) : flights;
+    if (from !== "ALL") src = src.filter(f => f.from === from);
+    return [...new Set(src.map(f => f.to).filter(Boolean))].sort();
+  }, [flights, airline, from]);
+
+  const handleAirlineChange = code => { setAirline(code); setFrom("ALL"); setTo("ALL"); };
+  const handleFromChange    = code => { setFrom(code); setTo("ALL"); };
 
   const matches = useMemo(() => {
-    if (!flightNum || flightNum.length < 3) return [];
-    return flights.filter(f => f.flight_iata.toUpperCase().includes(flightNum));
-  }, [flightNum, flights]);
+    if (!airline) return [];
+    return flights.filter(f => {
+      if (f.airline_iata !== airline) return false;
+      if (from !== "ALL" && f.from !== from) return false;
+      if (to   !== "ALL" && f.to   !== to)   return false;
+      return true;
+    });
+  }, [flights, airline, from, to]);
 
   const stats = useMemo(() => {
     if (!matches.length) return null;
-    const total    = matches.length;
-    const delayed  = matches.filter(f => f.status !== "On Time").length;
-    const major    = matches.filter(f => f.status === "Major Delay").length;
-    const onTime   = total - delayed;
-    const avgDelay = delayed > 0
-      ? Math.round(matches.filter(f=>f.delay_min>0).reduce((s,f)=>s+f.delay_min,0)/delayed)
-      : 0;
-    const routes   = [...new Set(matches.map(f=>`${f.from}→${f.to}`))];
+    const total     = matches.length;
+    const delayed   = matches.filter(f => f.status !== "On Time").length;
+    const major     = matches.filter(f => f.status === "Major Delay").length;
+    const onTime    = total - delayed;
+    const avgDelay  = delayed > 0
+      ? Math.round(matches.filter(f=>f.delay_min>0).reduce((s,f)=>s+f.delay_min,0)/delayed) : 0;
     const onTimeRate = Math.round((onTime/total)*100);
+    const recent    = [...matches].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,5);
 
     let verdict = "", verdictColor = "#4ade80";
-    if (onTimeRate >= 85)      { verdict = "✈ Generally reliable";       verdictColor = "#4ade80"; }
-    else if (onTimeRate >= 65) { verdict = "⚠ Some delay risk";          verdictColor = "#ff8c42"; }
-    else                       { verdict = "✗ Frequently delayed";        verdictColor = "#ff4444"; }
+    if (onTimeRate >= 85)      { verdict = "✈ Generally reliable"; verdictColor = "#4ade80"; }
+    else if (onTimeRate >= 65) { verdict = "⚠ Some delay risk";    verdictColor = "#ff8c42"; }
+    else                       { verdict = "✗ Frequently delayed";  verdictColor = "#ff4444"; }
 
-    return { total, delayed, major, onTime, avgDelay, onTimeRate, routes, verdict, verdictColor };
+    return { total, delayed, major, onTime, avgDelay, onTimeRate, verdict, verdictColor, recent };
   }, [matches]);
+
+  const selectedAirline = airlines.find(a => a.code === airline);
 
   return (
     <div style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.09)",borderRadius:3,padding:"16px 18px"}}>
-      <div style={{fontFamily:"'Space Mono',monospace",fontSize:9,letterSpacing:1.5,color:"#555",textTransform:"uppercase",marginBottom:12}}>✦ Flight Lookup</div>
-      <input value={query} onChange={e=>setQuery(e.target.value)} placeholder="e.g. AA123 or DL"
-        style={{width:"100%",background:"rgba(255,255,255,0.05)",border:"1px solid rgba(255,255,255,0.15)",color:"#e8e8e8",padding:"8px 12px",borderRadius:2,fontSize:13,fontFamily:"'Space Mono',monospace",outline:"none",letterSpacing:1,marginBottom:12}}/>
+      <div style={{fontFamily:"'Space Mono',monospace",fontSize:9,letterSpacing:1.5,color:"#00c8ff",textTransform:"uppercase",marginBottom:14}}>✦ Should I Take This Flight?</div>
 
-      {flightNum.length >= 3 && !stats && (
-        <div style={{color:"#444",fontSize:11,textAlign:"center",padding:"8px 0"}}>No flights found for "{flightNum}"</div>
+      {/* Step 1 — Airline */}
+      <label style={lblSt}>1. Airline</label>
+      <select value={airline} onChange={e=>handleAirlineChange(e.target.value)} style={{...selSt,borderColor:selectedAirline?selectedAirline.color+"66":"rgba(255,255,255,0.12)"}}>
+        <option value="">Select airline…</option>
+        {airlines.map(a=><option key={a.code} value={a.code}>{a.name} ({a.code})</option>)}
+      </select>
+
+      {/* Step 2 — From */}
+      {airline && (<>
+        <label style={lblSt}>2. Flying From</label>
+        <select value={from} onChange={e=>handleFromChange(e.target.value)} style={selSt}>
+          <option value="ALL">Any origin</option>
+          {fromAirports.map(a=><option key={a} value={a}>{a}</option>)}
+        </select>
+      </>)}
+
+      {/* Step 3 — To */}
+      {airline && from !== "ALL" && (<>
+        <label style={lblSt}>3. Flying To</label>
+        <select value={to} onChange={e=>setTo(e.target.value)} style={selSt}>
+          <option value="ALL">Any destination</option>
+          {toAirports.map(a=><option key={a} value={a}>{a}</option>)}
+        </select>
+      </>)}
+
+      {/* Prompt */}
+      {!airline && (
+        <div style={{color:"#333",fontSize:11,textAlign:"center",padding:"8px 0",fontStyle:"italic"}}>
+          Pick an airline to see its reliability
+        </div>
       )}
 
+      {/* No data yet */}
+      {airline && !matches.length && (
+        <div style={{color:"#444",fontSize:11,textAlign:"center",padding:"8px 0"}}>
+          No data for this selection yet.<br/>
+          <span style={{fontSize:10,color:"#333"}}>More data accumulates nightly.</span>
+        </div>
+      )}
+
+      {/* Results */}
       {stats && (
-        <div>
-          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
-            <span style={{fontFamily:"'Space Mono',monospace",fontSize:13,color:"#e8e8e8",letterSpacing:1}}>{matches[0].flight_iata}</span>
-            <span style={{background:`${stats.verdictColor}15`,border:`1px solid ${stats.verdictColor}44`,color:stats.verdictColor,fontSize:10,padding:"3px 9px",borderRadius:2,fontFamily:"'Space Mono',monospace"}}>{stats.verdict}</span>
+        <div style={{marginTop:4}}>
+          <div style={{display:"flex",alignItems:"flex-start",justifyContent:"space-between",marginBottom:10,paddingBottom:10,borderBottom:"1px solid rgba(255,255,255,0.07)"}}>
+            <div>
+              {selectedAirline && <div style={{color:selectedAirline.color,fontFamily:"'Space Mono',monospace",fontSize:11,fontWeight:700}}>{selectedAirline.name}</div>}
+              {from!=="ALL" && <div style={{color:"#555",fontFamily:"'Space Mono',monospace",fontSize:10,marginTop:3}}>{from}{to!=="ALL"?` → ${to}`:""}</div>}
+            </div>
+            <span style={{background:`${stats.verdictColor}15`,border:`1px solid ${stats.verdictColor}44`,color:stats.verdictColor,fontSize:9,padding:"3px 8px",borderRadius:2,fontFamily:"'Space Mono',monospace",whiteSpace:"nowrap",marginLeft:8}}>{stats.verdict}</span>
           </div>
+
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginBottom:12}}>
             {[
-              {l:"On-Time Rate", v:`${stats.onTimeRate}%`, c:stats.onTimeRate>=80?"#4ade80":stats.onTimeRate>=60?"#ff8c42":"#ff4444"},
-              {l:"Avg Delay",    v:stats.avgDelay>0?`${stats.avgDelay}m`:"—", c:"#ff8c42"},
-              {l:"Times Tracked",v:stats.total,   c:"#e8e8e8"},
-              {l:"Major Delays", v:stats.major,   c:"#ff4444"},
+              {l:"On-Time",   v:`${stats.onTimeRate}%`, c:stats.onTimeRate>=80?"#4ade80":stats.onTimeRate>=60?"#ff8c42":"#ff4444"},
+              {l:"Avg Delay", v:stats.avgDelay>0?`${stats.avgDelay}m`:"—", c:"#ff8c42"},
+              {l:"Tracked",   v:stats.total,  c:"#e8e8e8"},
+              {l:"Major",     v:stats.major,  c:"#ff4444"},
             ].map(({l,v,c})=>(
               <div key={l} style={{background:"rgba(255,255,255,0.03)",borderRadius:2,padding:"8px 10px"}}>
                 <div style={{color:c,fontFamily:"'Space Mono',monospace",fontSize:16,fontWeight:700}}>{v}</div>
@@ -189,10 +262,18 @@ function FlightLookup({ flights }) {
               </div>
             ))}
           </div>
-          <div style={{fontSize:10,color:"#555",marginBottom:6}}>ROUTES OBSERVED</div>
-          {stats.routes.map(r=>(
-            <div key={r} style={{fontFamily:"'Space Mono',monospace",fontSize:11,color:"#888",marginBottom:3}}>{r}</div>
-          ))}
+
+          <div style={{fontSize:9,color:"#444",letterSpacing:1,textTransform:"uppercase",fontFamily:"'Space Mono',monospace",marginBottom:7}}>Recent Flights</div>
+          {stats.recent.map(f => {
+            const badge = delayBadge(f.delay_min, f.status);
+            return (
+              <div key={f.id} style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:6,fontSize:11}}>
+                <span style={{color:"#555",fontFamily:"'Space Mono',monospace",fontSize:10}}>{f.date}</span>
+                <span style={{color:"#666",fontFamily:"'Space Mono',monospace",fontSize:10}}>{f.flight_iata}</span>
+                <span style={{background:`${badge.color}18`,border:`1px solid ${badge.color}44`,color:badge.color,fontSize:9,padding:"2px 6px",borderRadius:2,fontFamily:"'Space Mono',monospace"}}>{badge.label}</span>
+              </div>
+            );
+          })}
         </div>
       )}
     </div>
