@@ -1,0 +1,68 @@
+name: 🛫 Daily Flight Delay Collection
+
+on:
+  # 9:00 PM Eastern = 01:00 UTC (EST) / 01:00 UTC (ET, adjusts for DST)
+  # Using 01:05 UTC to avoid peak GitHub queue times
+  schedule:
+    - cron: '5 1 * * *'
+
+  # Allow manual runs from the Actions tab (great for testing!)
+  workflow_dispatch:
+    inputs:
+      debug:
+        description: 'Enable debug output'
+        required: false
+        default: 'false'
+
+jobs:
+  collect-flight-data:
+    name: Collect & Store Flight Delays
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to push data files back to repo
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Fetch all history so index.json accumulates correctly
+          fetch-depth: 0
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 📦 Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: 🛫 Collect flight delay data
+        env:
+          AVIATIONSTACK_API_KEY: ${{ secrets.AVIATIONSTACK_API_KEY }}
+        run: |
+          python scripts/collect_flights.py
+
+      - name: 📊 Show collection summary
+        run: |
+          echo "=== Today's data file ==="
+          ls -lh data/$(date +%Y-%m-%d).json 2>/dev/null || echo "No file found"
+          echo ""
+          echo "=== Index summary ==="
+          python3 -c "
+          import json
+          idx = json.load(open('data/index.json'))
+          print(f'Total days collected: {len(idx)}')
+          for entry in idx[-5:]:
+              d = entry['date']
+              t = entry['totals']
+              print(f\"  {d}: {t['flights']} flights, {t['delayed']} delayed ({t['delay_rate_pct']}%)\")
+          "
+
+      - name: 💾 Commit and push data
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/
+          git diff --staged --quiet || git commit -m "📊 Flight data: $(date +%Y-%m-%d) [automated]"
+          git push

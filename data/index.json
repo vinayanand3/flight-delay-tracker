@@ -1,0 +1,23 @@
+[
+  {
+    "date": "SAMPLE — run the workflow to populate real data",
+    "collected_at": "2025-04-21T01:05:00Z",
+    "totals": {
+      "flights": 0,
+      "delayed": 0,
+      "cancelled": 0,
+      "on_time": 0,
+      "delay_rate_pct": 0,
+      "avg_delay_minutes": 0
+    },
+    "delay_categories": {
+      "on_time": 0,
+      "minor": 0,
+      "moderate": 0,
+      "significant": 0,
+      "severe": 0
+    },
+    "by_airport": {},
+    "by_airline": {}
+  }
+]
