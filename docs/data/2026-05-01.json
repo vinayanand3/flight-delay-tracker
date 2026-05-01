@@ -1,0 +1,1081 @@
+{
+  "date": "2026-05-01",
+  "flights": [
+    {
+      "flight_iata": "8C3318",
+      "flight_icao": "ATN3318",
+      "airline_name": "Air Transport International",
+      "airline_iata": "8C",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-04-30T03:41:00+00:00",
+        "estimated": "2026-04-30T03:41:00+00:00",
+        "actual": "2026-04-30T04:17:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Cincinnati/Northern Kentucky",
+        "iata": "CVG",
+        "terminal": "3",
+        "gate": null,
+        "scheduled": "2026-04-30T05:20:00+00:00",
+        "estimated": "2026-04-30T05:16:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "CI5345",
+      "flight_icao": "CAL5345",
+      "airline_name": "China Airlines",
+      "airline_iata": "CI",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-04-30T00:20:00+00:00",
+        "estimated": "2026-04-30T00:20:00+00:00",
+        "actual": "2026-04-29T23:37:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "iata": "SFO",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": "2026-04-30T02:41:00+00:00",
+        "estimated": "2026-04-30T01:57:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "F96703",
+      "flight_icao": "FFT6703",
+      "airline_name": "Frontier",
+      "airline_iata": "F9",
+      "status": "active",
+      "departure": {
+        "airport": "Chicago O'hare International",
+        "iata": "ORD",
+        "terminal": "5",
+        "gate": "M15",
+        "scheduled": "2026-04-30T01:40:00+00:00",
+        "estimated": "2026-04-30T01:40:00+00:00",
+        "actual": "2026-04-30T02:11:00+00:00",
+        "delay_minutes": 4
+      },
+      "arrival": {
+        "airport": "Internacional Benito Juarez",
+        "iata": "MEX",
+        "terminal": "1",
+        "gate": "E3",
+        "scheduled": "2026-04-30T04:50:00+00:00",
+        "estimated": "2026-04-30T04:54:00+00:00",
+        "actual": null,
+        "delay_minutes": 4
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 4,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "5Y8641",
+      "flight_icao": "GTI8641",
+      "airline_name": "Atlas Air",
+      "airline_iata": "5Y",
+      "status": "active",
+      "departure": {
+        "airport": "Chicago O'hare International",
+        "iata": "ORD",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-04-30T01:00:00+00:00",
+        "estimated": "2026-04-30T01:00:00+00:00",
+        "actual": "2026-04-30T01:25:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Liege Airport",
+        "iata": "LGG",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-04-30T16:00:00+00:00",
+        "estimated": "2026-04-30T15:54:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "VB633",
+      "flight_icao": "VIV633",
+      "airline_name": "Viva",
+      "airline_iata": "VB",
+      "status": "active",
+      "departure": {
+        "airport": "Chicago O'hare International",
+        "iata": "ORD",
+        "terminal": "5",
+        "gate": "M19",
+        "scheduled": "2026-04-30T02:15:00+00:00",
+        "estimated": "2026-04-30T02:15:00+00:00",
+        "actual": "2026-04-30T02:13:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Gen Mariano Escobedo",
+        "iata": "MTY",
+        "terminal": "A",
+        "gate": null,
+        "scheduled": "2026-04-30T04:55:00+00:00",
+        "estimated": "2026-04-30T04:16:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "EK9394",
+      "flight_icao": "UAE9394",
+      "airline_name": "Emirates",
+      "airline_iata": "EK",
+      "status": "active",
+      "departure": {
+        "airport": "Chicago O'hare International",
+        "iata": "ORD",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-04-30T01:45:00+00:00",
+        "estimated": "2026-04-30T01:45:00+00:00",
+        "actual": "2026-04-30T01:17:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": null,
+        "iata": "DWC",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-05-01T00:20:00+00:00",
+        "estimated": "2026-04-30T23:39:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "Y4703",
+      "flight_icao": "VOI703",
+      "airline_name": "Volaris",
+      "airline_iata": "Y4",
+      "status": "active",
+      "departure": {
+        "airport": "Chicago O'hare International",
+        "iata": "ORD",
+        "terminal": "5",
+        "gate": "M15",
+        "scheduled": "2026-04-30T01:40:00+00:00",
+        "estimated": "2026-04-30T01:40:00+00:00",
+        "actual": "2026-04-30T02:11:00+00:00",
+        "delay_minutes": 4
+      },
+      "arrival": {
+        "airport": "Internacional Benito Juarez",
+        "iata": "MEX",
+        "terminal": "1",
+        "gate": "E3",
+        "scheduled": "2026-04-30T04:50:00+00:00",
+        "estimated": "2026-04-30T04:54:00+00:00",
+        "actual": null,
+        "delay_minutes": 4
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 4,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "VB187",
+      "flight_icao": "VIV187",
+      "airline_name": "Viva",
+      "airline_iata": "VB",
+      "status": "active",
+      "departure": {
+        "airport": "Chicago O'hare International",
+        "iata": "ORD",
+        "terminal": "5",
+        "gate": "M18",
+        "scheduled": "2026-04-30T01:20:00+00:00",
+        "estimated": "2026-04-30T01:20:00+00:00",
+        "actual": "2026-04-30T01:38:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Internacional Benito Juarez",
+        "iata": "MEX",
+        "terminal": "1",
+        "gate": "33",
+        "scheduled": "2026-04-30T04:45:00+00:00",
+        "estimated": "2026-04-30T04:25:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "QR8102",
+      "flight_icao": "QTR8102",
+      "airline_name": "Qatar Airways",
+      "airline_iata": "QR",
+      "status": "active",
+      "departure": {
+        "airport": "Chicago O'hare International",
+        "iata": "ORD",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-04-30T00:25:00+00:00",
+        "estimated": "2026-04-30T00:25:00+00:00",
+        "actual": "2026-04-30T00:50:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Schiphol",
+        "iata": "AMS",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-04-30T15:20:00+00:00",
+        "estimated": "2026-04-30T14:52:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "KE8255",
+      "flight_icao": "KAL8255",
+      "airline_name": "Korean Air",
+      "airline_iata": "KE",
+      "status": "active",
+      "departure": {
+        "airport": "Dallas/Fort Worth International",
+        "iata": "DFW",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-04-30T02:10:00+00:00",
+        "estimated": "2026-04-30T02:10:00+00:00",
+        "actual": "2026-04-30T02:35:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": null,
+        "scheduled": "2026-04-30T05:20:00+00:00",
+        "estimated": "2026-04-30T05:04:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "LA6450",
+      "flight_icao": "LAN6450",
+      "airline_name": "LATAM Airlines",
+      "airline_iata": "LA",
+      "status": "active",
+      "departure": {
+        "airport": "Denver International",
+        "iata": "DEN",
+        "terminal": null,
+        "gate": "A49",
+        "scheduled": "2026-04-30T00:55:00+00:00",
+        "estimated": "2026-04-30T00:55:00+00:00",
+        "actual": "2026-04-30T00:57:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": "A15",
+        "scheduled": "2026-04-30T05:49:00+00:00",
+        "estimated": "2026-04-30T05:03:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "KE3640",
+      "flight_icao": "KAL3640",
+      "airline_name": "Korean Air",
+      "airline_iata": "KE",
+      "status": "active",
+      "departure": {
+        "airport": "Denver International",
+        "iata": "DEN",
+        "terminal": null,
+        "gate": "A49",
+        "scheduled": "2026-04-30T00:55:00+00:00",
+        "estimated": "2026-04-30T00:55:00+00:00",
+        "actual": "2026-04-30T00:57:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": "A15",
+        "scheduled": "2026-04-30T05:49:00+00:00",
+        "estimated": "2026-04-30T05:03:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "AM3182",
+      "flight_icao": "AMX3182",
+      "airline_name": "Aeromexico",
+      "airline_iata": "AM",
+      "status": "active",
+      "departure": {
+        "airport": "Denver International",
+        "iata": "DEN",
+        "terminal": null,
+        "gate": "A49",
+        "scheduled": "2026-04-30T00:55:00+00:00",
+        "estimated": "2026-04-30T00:55:00+00:00",
+        "actual": "2026-04-30T00:57:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": "A15",
+        "scheduled": "2026-04-30T05:49:00+00:00",
+        "estimated": "2026-04-30T05:03:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "DL302",
+      "flight_icao": "DAL302",
+      "airline_name": "Delta Air Lines",
+      "airline_iata": "DL",
+      "status": "active",
+      "departure": {
+        "airport": "Denver International",
+        "iata": "DEN",
+        "terminal": null,
+        "gate": "A49",
+        "scheduled": "2026-04-30T00:55:00+00:00",
+        "estimated": "2026-04-30T00:55:00+00:00",
+        "actual": "2026-04-30T00:57:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": "A15",
+        "scheduled": "2026-04-30T05:49:00+00:00",
+        "estimated": "2026-04-30T05:03:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "SY3006",
+      "flight_icao": "SCX3006",
+      "airline_name": "Sun Country Airlines",
+      "airline_iata": "SY",
+      "status": "active",
+      "departure": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-04-30T00:06:00+00:00",
+        "estimated": "2026-04-30T00:06:00+00:00",
+        "actual": "2026-04-30T00:22:00+00:00",
+        "delay_minutes": 9
+      },
+      "arrival": {
+        "airport": "Cincinnati/Northern Kentucky",
+        "iata": "CVG",
+        "terminal": "2",
+        "gate": null,
+        "scheduled": "2026-04-30T06:11:00+00:00",
+        "estimated": "2026-04-30T06:20:00+00:00",
+        "actual": null,
+        "delay_minutes": 9
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 9,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "Y42208",
+      "flight_icao": "VOI2208",
+      "airline_name": "Volaris",
+      "airline_iata": "Y4",
+      "status": "active",
+      "departure": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": "3",
+        "gate": "D24",
+        "scheduled": "2026-04-30T00:59:00+00:00",
+        "estimated": "2026-04-30T00:59:00+00:00",
+        "actual": "2026-04-30T01:02:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Dallas/Fort Worth International",
+        "iata": "DFW",
+        "terminal": "E",
+        "gate": "E20",
+        "scheduled": "2026-04-30T05:50:00+00:00",
+        "estimated": "2026-04-30T05:05:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "Y42298",
+      "flight_icao": "VOI2298",
+      "airline_name": "Volaris",
+      "airline_iata": "Y4",
+      "status": "active",
+      "departure": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": "3",
+        "gate": "D19",
+        "scheduled": "2026-04-30T00:59:00+00:00",
+        "estimated": "2026-04-30T00:59:00+00:00",
+        "actual": "2026-04-30T01:01:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Denver International",
+        "iata": "DEN",
+        "terminal": null,
+        "gate": "A79",
+        "scheduled": "2026-04-30T03:59:00+00:00",
+        "estimated": "2026-04-30T03:21:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "UA7115",
+      "flight_icao": "UAL7115",
+      "airline_name": "United Airlines",
+      "airline_iata": "UA",
+      "status": "active",
+      "departure": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": "3",
+        "gate": "E1",
+        "scheduled": "2026-04-30T00:45:00+00:00",
+        "estimated": "2026-04-30T00:45:00+00:00",
+        "actual": "2026-04-30T00:50:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Tocumen International",
+        "iata": "PTY",
+        "terminal": "2",
+        "gate": "219",
+        "scheduled": "2026-04-30T09:00:00+00:00",
+        "estimated": "2026-04-30T08:32:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "KE6751",
+      "flight_icao": "KAL6751",
+      "airline_name": "Korean Air",
+      "airline_iata": "KE",
+      "status": "active",
+      "departure": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": "1",
+        "gate": "D25",
+        "scheduled": "2026-04-30T00:40:00+00:00",
+        "estimated": "2026-04-30T00:40:00+00:00",
+        "actual": "2026-04-30T01:03:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Minneapolis - St. Paul International",
+        "iata": "MSP",
+        "terminal": "1",
+        "gate": "G18",
+        "scheduled": "2026-04-30T05:43:00+00:00",
+        "estimated": "2026-04-30T05:33:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "Y42329",
+      "flight_icao": "VOI2329",
+      "airline_name": "Volaris",
+      "airline_iata": "Y4",
+      "status": "active",
+      "departure": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": "3",
+        "gate": "E9",
+        "scheduled": "2026-04-30T00:20:00+00:00",
+        "estimated": "2026-04-30T00:20:00+00:00",
+        "actual": "2026-04-30T00:55:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Chicago O'hare International",
+        "iata": "ORD",
+        "terminal": "5",
+        "gate": null,
+        "scheduled": "2026-04-30T06:08:00+00:00",
+        "estimated": "2026-04-30T05:50:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "F91650",
+      "flight_icao": "FFT1650",
+      "airline_name": "Frontier",
+      "airline_iata": "F9",
+      "status": "active",
+      "departure": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": "3",
+        "gate": "D24",
+        "scheduled": "2026-04-30T00:59:00+00:00",
+        "estimated": "2026-04-30T00:59:00+00:00",
+        "actual": "2026-04-30T01:02:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Dallas/Fort Worth International",
+        "iata": "DFW",
+        "terminal": "E",
+        "gate": "E20",
+        "scheduled": "2026-04-30T05:50:00+00:00",
+        "estimated": "2026-04-30T05:05:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "F91994",
+      "flight_icao": "FFT1994",
+      "airline_name": "Frontier",
+      "airline_iata": "F9",
+      "status": "active",
+      "departure": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": "3",
+        "gate": "D19",
+        "scheduled": "2026-04-30T00:59:00+00:00",
+        "estimated": "2026-04-30T00:59:00+00:00",
+        "actual": "2026-04-30T01:01:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Denver International",
+        "iata": "DEN",
+        "terminal": null,
+        "gate": "A79",
+        "scheduled": "2026-04-30T03:59:00+00:00",
+        "estimated": "2026-04-30T03:21:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "AA2921",
+      "flight_icao": "AAL2921",
+      "airline_name": "American Airlines",
+      "airline_iata": "AA",
+      "status": "active",
+      "departure": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": "1",
+        "gate": "D5",
+        "scheduled": "2026-04-30T00:59:00+00:00",
+        "estimated": "2026-04-30T00:59:00+00:00",
+        "actual": "2026-04-30T01:39:00+00:00",
+        "delay_minutes": 7
+      },
+      "arrival": {
+        "airport": "Dallas/Fort Worth International",
+        "iata": "DFW",
+        "terminal": "C",
+        "gate": "C22",
+        "scheduled": "2026-04-30T05:39:00+00:00",
+        "estimated": "2026-04-30T05:46:00+00:00",
+        "actual": null,
+        "delay_minutes": 7
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 7,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "CM253",
+      "flight_icao": "CMP253",
+      "airline_name": "Copa Airlines",
+      "airline_iata": "CM",
+      "status": "active",
+      "departure": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": "3",
+        "gate": "E1",
+        "scheduled": "2026-04-30T00:45:00+00:00",
+        "estimated": "2026-04-30T00:45:00+00:00",
+        "actual": "2026-04-30T00:50:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Tocumen International",
+        "iata": "PTY",
+        "terminal": "2",
+        "gate": "219",
+        "scheduled": "2026-04-30T09:00:00+00:00",
+        "estimated": "2026-04-30T08:32:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "DL2834",
+      "flight_icao": "DAL2834",
+      "airline_name": "Delta Air Lines",
+      "airline_iata": "DL",
+      "status": "active",
+      "departure": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": "1",
+        "gate": "D25",
+        "scheduled": "2026-04-30T00:40:00+00:00",
+        "estimated": "2026-04-30T00:40:00+00:00",
+        "actual": "2026-04-30T01:03:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Minneapolis - St. Paul International",
+        "iata": "MSP",
+        "terminal": "1",
+        "gate": "G18",
+        "scheduled": "2026-04-30T05:43:00+00:00",
+        "estimated": "2026-04-30T05:33:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "UA2017",
+      "flight_icao": "UAL2017",
+      "airline_name": "United Airlines",
+      "airline_iata": "UA",
+      "status": "active",
+      "departure": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": "3",
+        "gate": "D58",
+        "scheduled": "2026-04-30T00:36:00+00:00",
+        "estimated": "2026-04-30T00:36:00+00:00",
+        "actual": "2026-04-30T00:40:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "George Bush Intercontinental",
+        "iata": "IAH",
+        "terminal": "C",
+        "gate": "43",
+        "scheduled": "2026-04-30T05:34:00+00:00",
+        "estimated": "2026-04-30T04:59:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "DL857",
+      "flight_icao": "DAL857",
+      "airline_name": "Delta Air Lines",
+      "airline_iata": "DL",
+      "status": "active",
+      "departure": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": "1",
+        "gate": "D38",
+        "scheduled": "2026-04-30T00:30:00+00:00",
+        "estimated": "2026-04-30T00:30:00+00:00",
+        "actual": "2026-04-30T01:14:00+00:00",
+        "delay_minutes": 13
+      },
+      "arrival": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": "B12",
+        "scheduled": "2026-04-30T07:16:00+00:00",
+        "estimated": "2026-04-30T07:29:00+00:00",
+        "actual": null,
+        "delay_minutes": 13
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 13,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "F92146",
+      "flight_icao": "FFT2146",
+      "airline_name": "Frontier",
+      "airline_iata": "F9",
+      "status": "active",
+      "departure": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": "3",
+        "gate": "E9",
+        "scheduled": "2026-04-30T00:20:00+00:00",
+        "estimated": "2026-04-30T00:20:00+00:00",
+        "actual": "2026-04-30T00:55:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Chicago O'hare International",
+        "iata": "ORD",
+        "terminal": "5",
+        "gate": null,
+        "scheduled": "2026-04-30T06:08:00+00:00",
+        "estimated": "2026-04-30T05:50:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "F92184",
+      "flight_icao": "FFT2184",
+      "airline_name": "Frontier",
+      "airline_iata": "F9",
+      "status": "active",
+      "departure": {
+        "airport": "Tampa International",
+        "iata": "TPA",
+        "terminal": null,
+        "gate": "E75",
+        "scheduled": "2026-04-30T05:01:00+00:00",
+        "estimated": "2026-04-30T05:01:00+00:00",
+        "actual": "2026-04-30T04:59:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Hopkins International",
+        "iata": "CLE",
+        "terminal": "N",
+        "gate": "A2",
+        "scheduled": "2026-04-30T07:39:00+00:00",
+        "estimated": "2026-04-30T07:07:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    }
+  ],
+  "summary": {
+    "date": "2026-05-01",
+    "collected_at": "2026-05-01T04:54:30.762884Z",
+    "totals": {
+      "flights": 29,
+      "delayed": 0,
+      "cancelled": 0,
+      "on_time": 29,
+      "delay_rate_pct": 0.0,
+      "avg_delay_minutes": 0.0
+    },
+    "delay_categories": {
+      "on_time": 24,
+      "minor": 5,
+      "moderate": 0,
+      "significant": 0,
+      "severe": 0
+    },
+    "by_airport": {
+      "ATL": {
+        "total": 2,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "ORD": {
+        "total": 7,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "DFW": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "DEN": {
+        "total": 4,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "LAS": {
+        "total": 14,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "TPA": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      }
+    },
+    "by_airline": {
+      "Air Transport International": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "China Airlines": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Frontier": {
+        "total": 5,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Atlas Air": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Viva": {
+        "total": 2,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Emirates": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Volaris": {
+        "total": 4,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Qatar Airways": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Korean Air": {
+        "total": 3,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "LATAM Airlines": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Aeromexico": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Delta Air Lines": {
+        "total": 3,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Sun Country Airlines": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "United Airlines": {
+        "total": 2,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "American Airlines": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Copa Airlines": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      }
+    }
+  }
+}
