@@ -15773,5 +15773,126 @@
         "avg_delay_minutes": 20.0
       }
     }
+  },
+  {
+    "date": "2026-07-13",
+    "collected_at": "2026-07-13T04:36:52.184337Z",
+    "totals": {
+      "flights": 98,
+      "delayed": 77,
+      "cancelled": 0,
+      "on_time": 21,
+      "delay_rate_pct": 78.6,
+      "avg_delay_minutes": 48.0
+    },
+    "delay_categories": {
+      "on_time": 7,
+      "minor": 14,
+      "moderate": 36,
+      "significant": 41,
+      "severe": 0
+    },
+    "by_airport": {
+      "ATL": {
+        "total": 98,
+        "delayed": 77,
+        "total_delay_minutes": 3696,
+        "delay_rate_pct": 78.6,
+        "avg_delay_minutes": 48.0
+      }
+    },
+    "by_airline": {
+      "SAS": {
+        "total": 10,
+        "delayed": 9,
+        "total_delay_minutes": 507,
+        "delay_rate_pct": 90.0,
+        "avg_delay_minutes": 56.3
+      },
+      "KLM": {
+        "total": 10,
+        "delayed": 7,
+        "total_delay_minutes": 299,
+        "delay_rate_pct": 70.0,
+        "avg_delay_minutes": 42.7
+      },
+      "Air France": {
+        "total": 11,
+        "delayed": 8,
+        "total_delay_minutes": 439,
+        "delay_rate_pct": 72.7,
+        "avg_delay_minutes": 54.9
+      },
+      "Virgin Atlantic": {
+        "total": 19,
+        "delayed": 15,
+        "total_delay_minutes": 739,
+        "delay_rate_pct": 78.9,
+        "avg_delay_minutes": 49.3
+      },
+      "Korean Air": {
+        "total": 11,
+        "delayed": 9,
+        "total_delay_minutes": 466,
+        "delay_rate_pct": 81.8,
+        "avg_delay_minutes": 51.8
+      },
+      "LATAM Airlines": {
+        "total": 10,
+        "delayed": 8,
+        "total_delay_minutes": 334,
+        "delay_rate_pct": 80.0,
+        "avg_delay_minutes": 41.8
+      },
+      "Aeromexico": {
+        "total": 13,
+        "delayed": 10,
+        "total_delay_minutes": 532,
+        "delay_rate_pct": 76.9,
+        "avg_delay_minutes": 53.2
+      },
+      "Delta Air Lines": {
+        "total": 3,
+        "delayed": 1,
+        "total_delay_minutes": 17,
+        "delay_rate_pct": 33.3,
+        "avg_delay_minutes": 17.0
+      },
+      "WestJet": {
+        "total": 7,
+        "delayed": 6,
+        "total_delay_minutes": 295,
+        "delay_rate_pct": 85.7,
+        "avg_delay_minutes": 49.2
+      },
+      "American Airlines": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 17,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 17.0
+      },
+      "Iberia": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 17,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 17.0
+      },
+      "Aer Lingus": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 17,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 17.0
+      },
+      "Finnair": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 17,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 17.0
+      }
+    }
   }
 ]
