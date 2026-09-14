@@ -2,6 +2,10 @@
 
 A free, public dashboard for casual exploration of daily US flight delay samples. Built with static HTML, CSS, and JavaScript for GitHub Pages. No frontend API key, application server, paid map, or JavaScript build dependency is required.
 
+**[Open the live flight dashboard](https://vinayanand3.github.io/flight-delay-tracker/)**
+
+The live URL is the repository's GitHub Pages site. The Airframe redesign described below will appear there after the dashboard pull request is merged and deployed.
+
 ## Dashboard
 
 - Dark and light themes with saved preference and reduced-motion support.
