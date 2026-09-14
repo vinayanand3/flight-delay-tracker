@@ -1,155 +1,78 @@
-# ✈ US Flight Delay Tracker
+# Airframe: flight intelligence
 
-A fully automated pipeline that collects US flight delay data nightly and powers a live dashboard — all for free using GitHub Actions + GitHub Pages.
+A free, public dashboard for casual exploration of daily US flight delay samples. Built with static HTML, CSS, and JavaScript for GitHub Pages. No frontend API key, application server, paid map, or JavaScript build dependency is required.
 
----
+**[Open the live flight dashboard](https://vinayanand3.github.io/flight-delay-tracker/)**
 
-## 🗂 Repository Structure
+The live URL is the repository's GitHub Pages site. The Airframe redesign described below will appear there after the dashboard pull request is merged and deployed.
 
-```
-flight-delay-tracker/
-├── .github/
-│   └── workflows/
-│       └── collect_daily.yml     # Scheduled job (runs every night at 9 PM ET)
-├── scripts/
-│   ├── collect_flights.py        # Data collection script
-│   └── requirements.txt
-├── data/
-│   ├── index.json                # Cumulative summary (auto-updated)
-│   ├── 2025-04-21.json           # Daily snapshot files (auto-generated)
-│   └── ...
-├── docs/
-│   └── index.html                # Live dashboard (served via GitHub Pages)
-└── README.md
-```
+## Dashboard
 
----
+- Dark and light themes with saved preference and reduced-motion support.
+- Linked calendar-range, departure-airport, and airline filters.
+- Weighted sample delay rate, average delay among delayed observations, and severe delays.
+- Daily trend with real calendar gaps, clickable airport map, airline rankings, route matrix.
+- Searchable, paginated flight explorer with historical departure and arrival details.
+- CSV export of the current selection, with spreadsheet formula escaping.
+- Collection calendar and definitions explaining incomplete coverage.
+- Refresh on reopening the tab, every five minutes while visible, and on demand. Refresh failures keep the previous in-memory dataset. A snapshot older than 48 hours is labeled stale.
 
-## 🚀 Setup (5 minutes)
+## Important data context
 
-### 1. Create a new GitHub repo
-Create a new repository (public recommended — unlimited free Actions minutes).
+As audited on September 14, 2026, the repository contains **52 snapshots and 34,108 flight observations**, spanning April 22 through September 14, with **94 missing calendar days**. Every historical record has API status `active`. This is not a complete inventory of US flights, a cancellation monitor, or an official on-time performance source.
 
-### 2. Push this code
-```bash
-git init
-git add .
-git commit -m "🛫 Initial setup: flight delay tracker"
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-git push -u origin main
-```
+The legacy collector replaced missing delay values with zero. Historical zero values cannot prove a flight was on time. New snapshots preserve unknown delays. Marketing codeshares can count the same aircraft more than once. Historical records are preserved without inventing causes, filling gaps, or deleting old snapshots.
 
-### 3. Get a free AviationStack API key
-1. Go to [aviationstack.com](https://aviationstack.com)
-2. Sign up for the **free plan** (100 requests/month)
-3. Copy your API key from the dashboard
+See [AUDIT.md](AUDIT.md) for findings and limitations.
 
-> **Note on free tier:** The free plan gives 100 API calls/month. The script queries 30 airports once per run = ~30 requests/day. For a full month that's ~900 requests. **Upgrade to the $49.99/month Starter plan** for 10,000 requests/month to cover all airports reliably. Alternatively, the free tier works if you reduce `US_AIRPORTS` to ~3 airports in `collect_flights.py`.
+## Free collection strategy
 
-### 4. Add the API key as a GitHub Secret
-1. Go to your repo → **Settings** → **Secrets and variables** → **Actions**
-2. Click **New repository secret**
-3. Name: `AVIATIONSTACK_API_KEY`
-4. Value: your API key
-5. Click **Add secret**
+The [AviationStack free plan](https://aviationstack.com/pricing) lists 100 monthly requests. This collector queries **three airports per UTC day**, rotating through ATL, ORD, DFW, DEN, LAS, CMH, DTW, LGA, and TPA. Each airport is sampled every third day. Each query requests one page of up to 100 active departures; pagination is deliberately capped to preserve the free allowance.
 
-### 5. Enable GitHub Pages
-1. Go to **Settings** → **Pages**
-2. Source: **Deploy from a branch**
-3. Branch: `main` / Folder: `/docs`
-4. Click **Save**
+A rolling 31-day ledger limits tracked requests to 93. Existing snapshots and same-day attempts prevent duplicate calls. Failed requests are conservatively counted locally. This does not reveal or override provider usage from earlier collectors or other applications. Existing quota exhaustion may continue until the provider resets the allowance. No paid subscription or additional API was activated.
 
-Your dashboard will be live at: `https://YOUR_USERNAME.github.io/YOUR_REPO/`
+Schedule: **01:17 UTC daily**, equivalent to 21:17 EDT or 20:17 EST on the previous local date. GitHub scheduling is best effort, not an exact refresh guarantee. Snapshot filenames use the UTC collection date.
 
-### 6. Run your first collection manually
-1. Go to **Actions** tab → **Daily Flight Delay Collection**
-2. Click **Run workflow** → **Run workflow**
-3. Watch it collect data! (~2 minutes)
+## Local preview and checks
 
----
-
-## ⏰ Schedule
-
-The workflow runs automatically every night at **9:00 PM Eastern Time** (01:05 UTC).
-
-GitHub Actions cron is in UTC. EST = UTC-5, EDT = UTC-4. The cron is set to `5 1 * * *` which covers 9 PM ET year-round (accounting for DST is approximate — GitHub may run ±30 min off schedule during peak times).
-
----
-
-## 📊 Data Schema
-
-### `data/index.json`
-An array of daily summary objects:
-```json
-[
-  {
-    "date": "2025-04-21",
-    "collected_at": "2025-04-22T01:07:23Z",
-    "totals": {
-      "flights": 842,
-      "delayed": 187,
-      "cancelled": 12,
-      "on_time": 643,
-      "delay_rate_pct": 22.2,
-      "avg_delay_minutes": 38.5
-    },
-    "delay_categories": {
-      "on_time": 643,
-      "minor": 67,
-      "moderate": 71,
-      "significant": 38,
-      "severe": 11
-    },
-    "by_airport": {
-      "ATL": { "total": 94, "delayed": 21, "delay_rate_pct": 22.3, "avg_delay_minutes": 41 }
-    },
-    "by_airline": {
-      "Delta Air Lines": { "total": 142, "delayed": 28, "delay_rate_pct": 19.7, "avg_delay_minutes": 33 }
-    }
-  }
-]
+```sh
+python3 -m venv .venv
+.venv/bin/pip install -r scripts/requirements.txt
+.venv/bin/python -m unittest discover -s tests
+node --test tests/metrics.test.mjs
+python3 scripts/build_dashboard.py
+python3 -m http.server 8765 --directory docs
 ```
 
-### `data/YYYY-MM-DD.json`
-Full daily snapshot including every individual flight record with departure/arrival times, delay minutes, airline, airports, and status.
+Open http://localhost:8765. Do not open index.html with file:// because module loading and fetch require an HTTP server.
 
----
+## Publish in this repository
 
-## 📈 Dashboard Features
+1. Merge the dashboard branch into `main`.
+2. In **Settings > Pages > Build and deployment**, set **Source: GitHub Actions**. The audited repository currently uses branch publishing from `main` and `/docs`; the new workflow requires this one-time change.
+3. Run **Publish flight dashboard** manually if it did not run from the merge.
+4. Confirm a successful Pages deployment at https://vinayanand3.github.io/flight-delay-tracker/.
+5. The existing `AVIATIONSTACK_API_KEY` Actions secret is retained. Do not add it to website files.
 
-- **KPI Cards**: Total flights, delayed count, average delay, cancellations, 30-day average
-- **30-Day Trend Chart**: Delay rate % and average delay minutes over time
-- **Delay Category Donut**: Distribution of on-time vs minor/moderate/significant/severe delays
-- **Airline Bar Chart**: Top 10 airlines ranked by average delay
-- **Airport Grid**: All monitored airports with delay rates and color-coded severity
-- **History Table**: Day-by-day breakdown with at-a-glance delay badges
+The collection workflow saves its request ledger even on collection failure, then reports failure. The Pages workflow runs after collection completion, including failed collections, and republishes the last valid snapshots. `workflow_run` is intentional: commits created with `GITHUB_TOKEN` do not reliably start another push-triggered workflow. See [GitHub's custom Pages workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
----
+## Files
 
-## 🔧 Customization
+| Path | Purpose |
+| --- | --- |
+| `scripts/collect_flights.py` | Budgeted, rotating daily collector |
+| `scripts/build_dashboard.py` | Reproducible dashboard dataset from all snapshots |
+| `docs/index.html` | Dashboard shell |
+| `docs/assets/dashboard.js` | Views, filters, export, and refresh |
+| `docs/assets/metrics.js` | Pure, tested calculations |
+| `docs/assets/dashboard.css` | Responsive dark/light design and reduced motion |
+| `docs/data/YYYY-MM-DD.json` | Preserved full daily snapshots |
+| `docs/data/index.json` | Daily summary archive |
+| `docs/data/dashboard.json` | Generated dataset consumed by the dashboard |
+| `docs/data/collection-health.json` | Request accounting, created on the first new collection attempt |
+| `docs/flights.html` | Redirect for the previous flight explorer URL |
+| `.github/workflows/pages.yml` | Explicit static Pages deployment |
 
-**Change monitored airports:** Edit `US_AIRPORTS` in `scripts/collect_flights.py`
+The previous `flights-log.json` and standalone JSX prototype are legacy artifacts and are no longer consumed or refreshed by the new dashboard. All current views use the full snapshot archive through `dashboard.json`.
 
-**Change collection time:** Edit the cron in `.github/workflows/collect_daily.yml`
-- `5 1 * * *` = 9:05 PM ET
-- `5 2 * * *` = 10:05 PM ET
-- `5 6 * * *` = 2:05 AM ET
-
-**Collect more data:** Add more airports to the list, or run multiple times per day with additional cron entries.
-
----
-
-## 💰 Cost
-
-| Resource | Cost |
-|---|---|
-| GitHub Actions (public repo) | **Free** (unlimited minutes) |
-| GitHub Pages | **Free** |
-| AviationStack Free Tier | **Free** (100 req/month — limit airports to ~3/day) |
-| AviationStack Starter | $49.99/month (10,000 req — covers all 30 airports) |
-
----
-
-## 📝 License
-
-MIT
+The dashboard dataset grows with the archive. For much larger archives, split it by month and fetch selected months on demand. The present archive is small enough for client-side exploration.
