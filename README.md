@@ -1,6 +1,7 @@
 # ✈ US Flight Delay Tracker
 
 A fully automated pipeline that collects US flight delay data nightly and powers a live dashboard — all for free using GitHub Actions + GitHub Pages.
+Try it here: https://vinayanand3.github.io/flight-delay-tracker/
 
 ---
 
