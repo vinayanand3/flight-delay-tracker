@@ -1,0 +1,3324 @@
+{
+  "date": "2026-09-17",
+  "flights": [
+    {
+      "flight_iata": "QR8099",
+      "flight_icao": "QTR8099",
+      "airline_name": "Qatar Airways",
+      "airline_iata": "QR",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T00:15:00+00:00",
+        "estimated": "2026-09-17T00:15:00+00:00",
+        "actual": "2026-09-16T23:54:00+00:00",
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Schiphol",
+        "iata": "AMS",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T14:02:00+00:00",
+        "estimated": "2026-09-17T13:22:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "GB110",
+      "flight_icao": "ABX110",
+      "airline_name": "DHL Air",
+      "airline_iata": "GB",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T00:30:00+00:00",
+        "estimated": "2026-09-17T00:30:00+00:00",
+        "actual": "2026-09-17T01:05:00+00:00",
+        "delay_minutes": 35
+      },
+      "arrival": {
+        "airport": "Cincinnati/Northern Kentucky",
+        "iata": "CVG",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T02:12:00+00:00",
+        "estimated": "2026-09-17T02:03:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 35,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "CV6374",
+      "flight_icao": "CLX6374",
+      "airline_name": "Cargolux",
+      "airline_iata": "CV",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T02:40:00+00:00",
+        "estimated": "2026-09-17T02:40:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Findel",
+        "iata": "LUX",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T17:00:00+00:00",
+        "estimated": null,
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "TK6045",
+      "flight_icao": "THY6045",
+      "airline_name": "Atlas Air",
+      "airline_iata": "TK",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T00:20:00+00:00",
+        "estimated": "2026-09-17T00:20:00+00:00",
+        "actual": "2026-09-17T00:49:00+00:00",
+        "delay_minutes": 29
+      },
+      "arrival": {
+        "airport": "Istanbul Airport",
+        "iata": "IST",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T18:10:00+00:00",
+        "estimated": "2026-09-17T17:30:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 29,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "VS3844",
+      "flight_icao": "VIR3844",
+      "airline_name": "Virgin Atlantic",
+      "airline_iata": "VS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E8",
+        "scheduled": "2026-09-16T23:00:00+00:00",
+        "estimated": "2026-09-16T23:00:00+00:00",
+        "actual": "2026-09-16T23:04:00+00:00",
+        "delay_minutes": 4
+      },
+      "arrival": {
+        "airport": "Edinburgh",
+        "iata": "EDI",
+        "terminal": null,
+        "gate": "19",
+        "scheduled": "2026-09-17T11:50:00+00:00",
+        "estimated": "2026-09-17T11:02:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 4,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "KL6159",
+      "flight_icao": "KLM6159",
+      "airline_name": "KLM",
+      "airline_iata": "KL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E8",
+        "scheduled": "2026-09-16T23:00:00+00:00",
+        "estimated": "2026-09-16T23:00:00+00:00",
+        "actual": "2026-09-16T23:04:00+00:00",
+        "delay_minutes": 4
+      },
+      "arrival": {
+        "airport": "Edinburgh",
+        "iata": "EDI",
+        "terminal": null,
+        "gate": "19",
+        "scheduled": "2026-09-17T11:50:00+00:00",
+        "estimated": "2026-09-17T11:02:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 4,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "AF9093",
+      "flight_icao": "AFR9093",
+      "airline_name": "Air France",
+      "airline_iata": "AF",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E8",
+        "scheduled": "2026-09-16T23:00:00+00:00",
+        "estimated": "2026-09-16T23:00:00+00:00",
+        "actual": "2026-09-16T23:04:00+00:00",
+        "delay_minutes": 4
+      },
+      "arrival": {
+        "airport": "Edinburgh",
+        "iata": "EDI",
+        "terminal": null,
+        "gate": "19",
+        "scheduled": "2026-09-17T11:50:00+00:00",
+        "estimated": "2026-09-17T11:02:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 4,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "SV4433",
+      "flight_icao": "SVA4433",
+      "airline_name": "Saudia",
+      "airline_iata": "SV",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F6",
+        "scheduled": "2026-09-16T23:55:00+00:00",
+        "estimated": "2026-09-16T23:55:00+00:00",
+        "actual": "2026-09-16T23:59:00+00:00",
+        "delay_minutes": 4
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": "26",
+        "scheduled": "2026-09-17T13:15:00+00:00",
+        "estimated": "2026-09-17T12:31:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 4,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "SK3979",
+      "flight_icao": "SAS3979",
+      "airline_name": "SAS",
+      "airline_iata": "SK",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F6",
+        "scheduled": "2026-09-16T23:55:00+00:00",
+        "estimated": "2026-09-16T23:55:00+00:00",
+        "actual": "2026-09-16T23:59:00+00:00",
+        "delay_minutes": 4
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": "26",
+        "scheduled": "2026-09-17T13:15:00+00:00",
+        "estimated": "2026-09-17T12:31:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 4,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "KL6195",
+      "flight_icao": "KLM6195",
+      "airline_name": "KLM",
+      "airline_iata": "KL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F6",
+        "scheduled": "2026-09-16T23:55:00+00:00",
+        "estimated": "2026-09-16T23:55:00+00:00",
+        "actual": "2026-09-16T23:59:00+00:00",
+        "delay_minutes": 4
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": "26",
+        "scheduled": "2026-09-17T13:15:00+00:00",
+        "estimated": "2026-09-17T12:31:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 4,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "AF9092",
+      "flight_icao": "AFR9092",
+      "airline_name": "Air France",
+      "airline_iata": "AF",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F6",
+        "scheduled": "2026-09-16T23:55:00+00:00",
+        "estimated": "2026-09-16T23:55:00+00:00",
+        "actual": "2026-09-16T23:59:00+00:00",
+        "delay_minutes": 4
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": "26",
+        "scheduled": "2026-09-17T13:15:00+00:00",
+        "estimated": "2026-09-17T12:31:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 4,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "VS4067",
+      "flight_icao": "VIR4067",
+      "airline_name": "Virgin Atlantic",
+      "airline_iata": "VS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F6",
+        "scheduled": "2026-09-16T23:55:00+00:00",
+        "estimated": "2026-09-16T23:55:00+00:00",
+        "actual": "2026-09-16T23:59:00+00:00",
+        "delay_minutes": 4
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": "26",
+        "scheduled": "2026-09-17T13:15:00+00:00",
+        "estimated": "2026-09-17T12:31:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 4,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "LA6347",
+      "flight_icao": "LAN6347",
+      "airline_name": "LATAM Airlines",
+      "airline_iata": "LA",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E7",
+        "scheduled": "2026-09-16T23:45:00+00:00",
+        "estimated": "2026-09-16T23:45:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Galeao Antonio Carlos Jobim",
+        "iata": "GIG",
+        "terminal": "2",
+        "gate": "C49",
+        "scheduled": "2026-09-17T10:15:00+00:00",
+        "estimated": null,
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "KE7291",
+      "flight_icao": "KAL7291",
+      "airline_name": "Korean Air",
+      "airline_iata": "KE",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E7",
+        "scheduled": "2026-09-16T23:45:00+00:00",
+        "estimated": "2026-09-16T23:45:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "arrival": {
+        "airport": "Galeao Antonio Carlos Jobim",
+        "iata": "GIG",
+        "terminal": "2",
+        "gate": "C49",
+        "scheduled": "2026-09-17T10:15:00+00:00",
+        "estimated": null,
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 0,
+      "delay_category": "on_time"
+    },
+    {
+      "flight_iata": "KE5036",
+      "flight_icao": "KAL5036",
+      "airline_name": "Korean Air",
+      "airline_iata": "KE",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F2",
+        "scheduled": "2026-09-16T23:35:00+00:00",
+        "estimated": "2026-09-16T23:35:00+00:00",
+        "actual": "2026-09-16T23:39:00+00:00",
+        "delay_minutes": 4
+      },
+      "arrival": {
+        "airport": "Seoul (Incheon)",
+        "iata": "ICN",
+        "terminal": "2",
+        "gate": "242",
+        "scheduled": "2026-09-18T04:00:00+00:00",
+        "estimated": "2026-09-18T02:58:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 4,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "WS5421",
+      "flight_icao": "WJA5421",
+      "airline_name": "WestJet",
+      "airline_iata": "WS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": "T4",
+        "scheduled": "2026-09-16T22:49:00+00:00",
+        "estimated": "2026-09-16T22:49:00+00:00",
+        "actual": "2026-09-16T23:13:00+00:00",
+        "delay_minutes": 24
+      },
+      "arrival": {
+        "airport": "Los Angeles International",
+        "iata": "LAX",
+        "terminal": "2",
+        "gate": "22",
+        "scheduled": "2026-09-17T00:26:00+00:00",
+        "estimated": "2026-09-17T00:21:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 24,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "VS5145",
+      "flight_icao": "VIR5145",
+      "airline_name": "Virgin Atlantic",
+      "airline_iata": "VS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": "T4",
+        "scheduled": "2026-09-16T22:49:00+00:00",
+        "estimated": "2026-09-16T22:49:00+00:00",
+        "actual": "2026-09-16T23:13:00+00:00",
+        "delay_minutes": 24
+      },
+      "arrival": {
+        "airport": "Los Angeles International",
+        "iata": "LAX",
+        "terminal": "2",
+        "gate": "22",
+        "scheduled": "2026-09-17T00:26:00+00:00",
+        "estimated": "2026-09-17T00:21:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 24,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "LA8956",
+      "flight_icao": "LAN8956",
+      "airline_name": "LATAM Airlines",
+      "airline_iata": "LA",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": "T4",
+        "scheduled": "2026-09-16T22:49:00+00:00",
+        "estimated": "2026-09-16T22:49:00+00:00",
+        "actual": "2026-09-16T23:13:00+00:00",
+        "delay_minutes": 24
+      },
+      "arrival": {
+        "airport": "Los Angeles International",
+        "iata": "LAX",
+        "terminal": "2",
+        "gate": "22",
+        "scheduled": "2026-09-17T00:26:00+00:00",
+        "estimated": "2026-09-17T00:21:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 24,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "AM3132",
+      "flight_icao": "AMX3132",
+      "airline_name": "Aeromexico",
+      "airline_iata": "AM",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": "T4",
+        "scheduled": "2026-09-16T22:49:00+00:00",
+        "estimated": "2026-09-16T22:49:00+00:00",
+        "actual": "2026-09-16T23:13:00+00:00",
+        "delay_minutes": 24
+      },
+      "arrival": {
+        "airport": "Los Angeles International",
+        "iata": "LAX",
+        "terminal": "2",
+        "gate": "22",
+        "scheduled": "2026-09-17T00:26:00+00:00",
+        "estimated": "2026-09-17T00:21:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 24,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "VS7112",
+      "flight_icao": "VIR7112",
+      "airline_name": "Virgin Atlantic",
+      "airline_iata": "VS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F3",
+        "scheduled": "2026-09-16T22:40:00+00:00",
+        "estimated": "2026-09-16T22:40:00+00:00",
+        "actual": "2026-09-16T23:10:00+00:00",
+        "delay_minutes": 30
+      },
+      "arrival": {
+        "airport": "Schiphol",
+        "iata": "AMS",
+        "terminal": null,
+        "gate": "E20",
+        "scheduled": "2026-09-17T13:10:00+00:00",
+        "estimated": "2026-09-17T12:35:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 30,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "SV4157",
+      "flight_icao": "SVA4157",
+      "airline_name": "Saudia",
+      "airline_iata": "SV",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F3",
+        "scheduled": "2026-09-16T22:40:00+00:00",
+        "estimated": "2026-09-16T22:40:00+00:00",
+        "actual": "2026-09-16T23:10:00+00:00",
+        "delay_minutes": 30
+      },
+      "arrival": {
+        "airport": "Schiphol",
+        "iata": "AMS",
+        "terminal": null,
+        "gate": "E20",
+        "scheduled": "2026-09-17T13:10:00+00:00",
+        "estimated": "2026-09-17T12:35:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 30,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "DL9375",
+      "flight_icao": "DAL9375",
+      "airline_name": "Delta Air Lines",
+      "airline_iata": "DL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F3",
+        "scheduled": "2026-09-16T22:40:00+00:00",
+        "estimated": "2026-09-16T22:40:00+00:00",
+        "actual": "2026-09-16T23:10:00+00:00",
+        "delay_minutes": 30
+      },
+      "arrival": {
+        "airport": "Schiphol",
+        "iata": "AMS",
+        "terminal": null,
+        "gate": "E20",
+        "scheduled": "2026-09-17T13:10:00+00:00",
+        "estimated": "2026-09-17T12:35:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 30,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "AF6693",
+      "flight_icao": "AFR6693",
+      "airline_name": "Air France",
+      "airline_iata": "AF",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F3",
+        "scheduled": "2026-09-16T22:40:00+00:00",
+        "estimated": "2026-09-16T22:40:00+00:00",
+        "actual": "2026-09-16T23:10:00+00:00",
+        "delay_minutes": 30
+      },
+      "arrival": {
+        "airport": "Schiphol",
+        "iata": "AMS",
+        "terminal": null,
+        "gate": "E20",
+        "scheduled": "2026-09-17T13:10:00+00:00",
+        "estimated": "2026-09-17T12:35:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 30,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "AA6977",
+      "flight_icao": "AAL6977",
+      "airline_name": "American Airlines",
+      "airline_iata": "AA",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": null,
+        "scheduled": "2026-09-16T22:35:00+00:00",
+        "estimated": "2026-09-16T22:35:00+00:00",
+        "actual": "2026-09-16T22:48:00+00:00",
+        "delay_minutes": 13
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": null,
+        "scheduled": "2026-09-17T11:45:00+00:00",
+        "estimated": "2026-09-17T11:15:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 13,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "IB3595",
+      "flight_icao": "IBE3595",
+      "airline_name": "Iberia",
+      "airline_iata": "IB",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": null,
+        "scheduled": "2026-09-16T22:35:00+00:00",
+        "estimated": "2026-09-16T22:35:00+00:00",
+        "actual": "2026-09-16T22:48:00+00:00",
+        "delay_minutes": 13
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": null,
+        "scheduled": "2026-09-17T11:45:00+00:00",
+        "estimated": "2026-09-17T11:15:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 13,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "EI8926",
+      "flight_icao": "EIN8926",
+      "airline_name": "Aer Lingus",
+      "airline_iata": "EI",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": null,
+        "scheduled": "2026-09-16T22:35:00+00:00",
+        "estimated": "2026-09-16T22:35:00+00:00",
+        "actual": "2026-09-16T22:48:00+00:00",
+        "delay_minutes": 13
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": null,
+        "scheduled": "2026-09-17T11:45:00+00:00",
+        "estimated": "2026-09-17T11:15:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 13,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "AY5426",
+      "flight_icao": "FIN5426",
+      "airline_name": "Finnair",
+      "airline_iata": "AY",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": null,
+        "scheduled": "2026-09-16T22:35:00+00:00",
+        "estimated": "2026-09-16T22:35:00+00:00",
+        "actual": "2026-09-16T22:48:00+00:00",
+        "delay_minutes": 13
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": null,
+        "scheduled": "2026-09-17T11:45:00+00:00",
+        "estimated": "2026-09-17T11:15:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 13,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "VS5133",
+      "flight_icao": "VIR5133",
+      "airline_name": "Virgin Atlantic",
+      "airline_iata": "VS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": "F8",
+        "scheduled": "2026-09-16T22:25:00+00:00",
+        "estimated": "2026-09-16T22:25:00+00:00",
+        "actual": "2026-09-16T22:34:00+00:00",
+        "delay_minutes": 9
+      },
+      "arrival": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": "1",
+        "gate": "D42",
+        "scheduled": "2026-09-16T23:36:00+00:00",
+        "estimated": "2026-09-16T23:11:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 9,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "LA7914",
+      "flight_icao": "LAN7914",
+      "airline_name": "LATAM Airlines",
+      "airline_iata": "LA",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": "F8",
+        "scheduled": "2026-09-16T22:25:00+00:00",
+        "estimated": "2026-09-16T22:25:00+00:00",
+        "actual": "2026-09-16T22:34:00+00:00",
+        "delay_minutes": 9
+      },
+      "arrival": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": "1",
+        "gate": "D42",
+        "scheduled": "2026-09-16T23:36:00+00:00",
+        "estimated": "2026-09-16T23:11:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 9,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "KL7840",
+      "flight_icao": "KLM7840",
+      "airline_name": "KLM",
+      "airline_iata": "KL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": "F8",
+        "scheduled": "2026-09-16T22:25:00+00:00",
+        "estimated": "2026-09-16T22:25:00+00:00",
+        "actual": "2026-09-16T22:34:00+00:00",
+        "delay_minutes": 9
+      },
+      "arrival": {
+        "airport": "Harry Reid International Airport",
+        "iata": "LAS",
+        "terminal": "1",
+        "gate": "D42",
+        "scheduled": "2026-09-16T23:36:00+00:00",
+        "estimated": "2026-09-16T23:11:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 9,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "VS4095",
+      "flight_icao": "VIR4095",
+      "airline_name": "Virgin Atlantic",
+      "airline_iata": "VS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F4",
+        "scheduled": "2026-09-16T22:10:00+00:00",
+        "estimated": "2026-09-16T22:10:00+00:00",
+        "actual": "2026-09-16T22:12:00+00:00",
+        "delay_minutes": 2
+      },
+      "arrival": {
+        "airport": "Oliver Reginald Tambo International (Jan Smuts International)",
+        "iata": "JNB",
+        "terminal": "A",
+        "gate": "E1",
+        "scheduled": "2026-09-17T19:40:00+00:00",
+        "estimated": "2026-09-17T18:58:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 2,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "VS3926",
+      "flight_icao": "VIR3926",
+      "airline_name": "Virgin Atlantic",
+      "airline_iata": "VS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E12",
+        "scheduled": "2026-09-16T22:10:00+00:00",
+        "estimated": "2026-09-16T22:10:00+00:00",
+        "actual": "2026-09-16T22:19:00+00:00",
+        "delay_minutes": 9
+      },
+      "arrival": {
+        "airport": "El Prat De Llobregat",
+        "iata": "BCN",
+        "terminal": "1",
+        "gate": "277",
+        "scheduled": "2026-09-17T12:50:00+00:00",
+        "estimated": "2026-09-17T12:42:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 9,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "KL6035",
+      "flight_icao": "KLM6035",
+      "airline_name": "KLM",
+      "airline_iata": "KL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E12",
+        "scheduled": "2026-09-16T22:10:00+00:00",
+        "estimated": "2026-09-16T22:10:00+00:00",
+        "actual": "2026-09-16T22:19:00+00:00",
+        "delay_minutes": 9
+      },
+      "arrival": {
+        "airport": "El Prat De Llobregat",
+        "iata": "BCN",
+        "terminal": "1",
+        "gate": "277",
+        "scheduled": "2026-09-17T12:50:00+00:00",
+        "estimated": "2026-09-17T12:42:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 9,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "AM3965",
+      "flight_icao": "AMX3965",
+      "airline_name": "Aeromexico",
+      "airline_iata": "AM",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E12",
+        "scheduled": "2026-09-16T22:10:00+00:00",
+        "estimated": "2026-09-16T22:10:00+00:00",
+        "actual": "2026-09-16T22:19:00+00:00",
+        "delay_minutes": 9
+      },
+      "arrival": {
+        "airport": "El Prat De Llobregat",
+        "iata": "BCN",
+        "terminal": "1",
+        "gate": "277",
+        "scheduled": "2026-09-17T12:50:00+00:00",
+        "estimated": "2026-09-17T12:42:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 9,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "AF3601",
+      "flight_icao": "AFR3601",
+      "airline_name": "Air France",
+      "airline_iata": "AF",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E12",
+        "scheduled": "2026-09-16T22:10:00+00:00",
+        "estimated": "2026-09-16T22:10:00+00:00",
+        "actual": "2026-09-16T22:19:00+00:00",
+        "delay_minutes": 9
+      },
+      "arrival": {
+        "airport": "El Prat De Llobregat",
+        "iata": "BCN",
+        "terminal": "1",
+        "gate": "277",
+        "scheduled": "2026-09-17T12:50:00+00:00",
+        "estimated": "2026-09-17T12:42:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 9,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "LA6357",
+      "flight_icao": "LAN6357",
+      "airline_name": "LATAM Airlines",
+      "airline_iata": "LA",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F10",
+        "scheduled": "2026-09-16T22:05:00+00:00",
+        "estimated": "2026-09-16T22:05:00+00:00",
+        "actual": "2026-09-16T22:36:00+00:00",
+        "delay_minutes": 31
+      },
+      "arrival": {
+        "airport": "Arturo Merino Benitez",
+        "iata": "SCL",
+        "terminal": "2",
+        "gate": "E4",
+        "scheduled": "2026-09-17T08:15:00+00:00",
+        "estimated": "2026-09-17T08:06:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 31,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "KE7299",
+      "flight_icao": "KAL7299",
+      "airline_name": "Korean Air",
+      "airline_iata": "KE",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F10",
+        "scheduled": "2026-09-16T22:05:00+00:00",
+        "estimated": "2026-09-16T22:05:00+00:00",
+        "actual": "2026-09-16T22:36:00+00:00",
+        "delay_minutes": 31
+      },
+      "arrival": {
+        "airport": "Arturo Merino Benitez",
+        "iata": "SCL",
+        "terminal": "2",
+        "gate": "E4",
+        "scheduled": "2026-09-17T08:15:00+00:00",
+        "estimated": "2026-09-17T08:06:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 31,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "VS3993",
+      "flight_icao": "VIR3993",
+      "airline_name": "Virgin Atlantic",
+      "airline_iata": "VS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E28",
+        "scheduled": "2026-09-16T22:05:00+00:00",
+        "estimated": "2026-09-16T22:05:00+00:00",
+        "actual": "2026-09-16T22:15:00+00:00",
+        "delay_minutes": 10
+      },
+      "arrival": {
+        "airport": "Charles De Gaulle",
+        "iata": "CDG",
+        "terminal": "2E",
+        "gate": "M29",
+        "scheduled": "2026-09-17T12:30:00+00:00",
+        "estimated": "2026-09-17T11:53:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 10,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "SV4459",
+      "flight_icao": "SVA4459",
+      "airline_name": "Saudia",
+      "airline_iata": "SV",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E28",
+        "scheduled": "2026-09-16T22:05:00+00:00",
+        "estimated": "2026-09-16T22:05:00+00:00",
+        "actual": "2026-09-16T22:15:00+00:00",
+        "delay_minutes": 10
+      },
+      "arrival": {
+        "airport": "Charles De Gaulle",
+        "iata": "CDG",
+        "terminal": "2E",
+        "gate": "M29",
+        "scheduled": "2026-09-17T12:30:00+00:00",
+        "estimated": "2026-09-17T11:53:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 10,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "KL6097",
+      "flight_icao": "KLM6097",
+      "airline_name": "KLM",
+      "airline_iata": "KL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E28",
+        "scheduled": "2026-09-16T22:05:00+00:00",
+        "estimated": "2026-09-16T22:05:00+00:00",
+        "actual": "2026-09-16T22:15:00+00:00",
+        "delay_minutes": 10
+      },
+      "arrival": {
+        "airport": "Charles De Gaulle",
+        "iata": "CDG",
+        "terminal": "2E",
+        "gate": "M29",
+        "scheduled": "2026-09-17T12:30:00+00:00",
+        "estimated": "2026-09-17T11:53:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 10,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "AM3988",
+      "flight_icao": "AMX3988",
+      "airline_name": "Aeromexico",
+      "airline_iata": "AM",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E28",
+        "scheduled": "2026-09-16T22:05:00+00:00",
+        "estimated": "2026-09-16T22:05:00+00:00",
+        "actual": "2026-09-16T22:15:00+00:00",
+        "delay_minutes": 10
+      },
+      "arrival": {
+        "airport": "Charles De Gaulle",
+        "iata": "CDG",
+        "terminal": "2E",
+        "gate": "M29",
+        "scheduled": "2026-09-17T12:30:00+00:00",
+        "estimated": "2026-09-17T11:53:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 10,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "AF3595",
+      "flight_icao": "AFR3595",
+      "airline_name": "Air France",
+      "airline_iata": "AF",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E28",
+        "scheduled": "2026-09-16T22:05:00+00:00",
+        "estimated": "2026-09-16T22:05:00+00:00",
+        "actual": "2026-09-16T22:15:00+00:00",
+        "delay_minutes": 10
+      },
+      "arrival": {
+        "airport": "Charles De Gaulle",
+        "iata": "CDG",
+        "terminal": "2E",
+        "gate": "M29",
+        "scheduled": "2026-09-17T12:30:00+00:00",
+        "estimated": "2026-09-17T11:53:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 10,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "SV4431",
+      "flight_icao": "SVA4431",
+      "airline_name": "Saudia",
+      "airline_iata": "SV",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E30",
+        "scheduled": "2026-09-16T22:05:00+00:00",
+        "estimated": "2026-09-16T22:05:00+00:00",
+        "actual": "2026-09-16T22:10:00+00:00",
+        "delay_minutes": 5
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": "35",
+        "scheduled": "2026-09-17T11:20:00+00:00",
+        "estimated": "2026-09-17T10:47:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 5,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "SK3977",
+      "flight_icao": "SAS3977",
+      "airline_name": "SAS",
+      "airline_iata": "SK",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E30",
+        "scheduled": "2026-09-16T22:05:00+00:00",
+        "estimated": "2026-09-16T22:05:00+00:00",
+        "actual": "2026-09-16T22:10:00+00:00",
+        "delay_minutes": 5
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": "35",
+        "scheduled": "2026-09-17T11:20:00+00:00",
+        "estimated": "2026-09-17T10:47:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 5,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "KL6069",
+      "flight_icao": "KLM6069",
+      "airline_name": "KLM",
+      "airline_iata": "KL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E30",
+        "scheduled": "2026-09-16T22:05:00+00:00",
+        "estimated": "2026-09-16T22:05:00+00:00",
+        "actual": "2026-09-16T22:10:00+00:00",
+        "delay_minutes": 5
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": "35",
+        "scheduled": "2026-09-17T11:20:00+00:00",
+        "estimated": "2026-09-17T10:47:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 5,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "AF3553",
+      "flight_icao": "AFR3553",
+      "airline_name": "Air France",
+      "airline_iata": "AF",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E30",
+        "scheduled": "2026-09-16T22:05:00+00:00",
+        "estimated": "2026-09-16T22:05:00+00:00",
+        "actual": "2026-09-16T22:10:00+00:00",
+        "delay_minutes": 5
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": "35",
+        "scheduled": "2026-09-17T11:20:00+00:00",
+        "estimated": "2026-09-17T10:47:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 5,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "VS4010",
+      "flight_icao": "VIR4010",
+      "airline_name": "Virgin Atlantic",
+      "airline_iata": "VS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E30",
+        "scheduled": "2026-09-16T22:05:00+00:00",
+        "estimated": "2026-09-16T22:05:00+00:00",
+        "actual": "2026-09-16T22:10:00+00:00",
+        "delay_minutes": 5
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": "35",
+        "scheduled": "2026-09-17T11:20:00+00:00",
+        "estimated": "2026-09-17T10:47:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 5,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "LP2483",
+      "flight_icao": "LPE2483",
+      "airline_name": "LATAM Airlines",
+      "airline_iata": "LP",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": null,
+        "scheduled": "2026-09-16T23:15:00+00:00",
+        "estimated": "2026-09-16T23:15:00+00:00",
+        "actual": "2026-09-16T23:21:00+00:00",
+        "delay_minutes": 6
+      },
+      "arrival": {
+        "airport": "Jorge Chavez International",
+        "iata": "LIM",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T05:00:00+00:00",
+        "estimated": "2026-09-17T04:36:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 6,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "DL6078",
+      "flight_icao": "DAL6078",
+      "airline_name": "Delta Air Lines",
+      "airline_iata": "DL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": null,
+        "scheduled": "2026-09-16T23:15:00+00:00",
+        "estimated": "2026-09-16T23:15:00+00:00",
+        "actual": "2026-09-16T23:21:00+00:00",
+        "delay_minutes": 6
+      },
+      "arrival": {
+        "airport": "Jorge Chavez International",
+        "iata": "LIM",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T05:00:00+00:00",
+        "estimated": "2026-09-17T04:36:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 6,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "WB1346",
+      "flight_icao": "RWD1346",
+      "airline_name": "RwandAir",
+      "airline_iata": "WB",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "N",
+        "gate": "F5",
+        "scheduled": "2026-09-16T21:50:00+00:00",
+        "estimated": "2026-09-16T21:50:00+00:00",
+        "actual": "2026-09-16T22:09:00+00:00",
+        "delay_minutes": 19
+      },
+      "arrival": {
+        "airport": "Istanbul Airport",
+        "iata": "IST",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T15:40:00+00:00",
+        "estimated": "2026-09-17T14:45:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 19,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "TG9193",
+      "flight_icao": "THA9193",
+      "airline_name": "Thai Airways",
+      "airline_iata": "TG",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "N",
+        "gate": "F5",
+        "scheduled": "2026-09-16T21:50:00+00:00",
+        "estimated": "2026-09-16T21:50:00+00:00",
+        "actual": "2026-09-16T22:09:00+00:00",
+        "delay_minutes": 19
+      },
+      "arrival": {
+        "airport": "Istanbul Airport",
+        "iata": "IST",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T15:40:00+00:00",
+        "estimated": "2026-09-17T14:45:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 19,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "PK5032",
+      "flight_icao": "PIA5032",
+      "airline_name": "Pakistan International Airlines",
+      "airline_iata": "PK",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "N",
+        "gate": "F5",
+        "scheduled": "2026-09-16T21:50:00+00:00",
+        "estimated": "2026-09-16T21:50:00+00:00",
+        "actual": "2026-09-16T22:09:00+00:00",
+        "delay_minutes": 19
+      },
+      "arrival": {
+        "airport": "Istanbul Airport",
+        "iata": "IST",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T15:40:00+00:00",
+        "estimated": "2026-09-17T14:45:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 19,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "6E4000",
+      "flight_icao": "IGO4000",
+      "airline_name": "IndiGo",
+      "airline_iata": "6E",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "N",
+        "gate": "F5",
+        "scheduled": "2026-09-16T21:50:00+00:00",
+        "estimated": "2026-09-16T21:50:00+00:00",
+        "actual": "2026-09-16T22:09:00+00:00",
+        "delay_minutes": 19
+      },
+      "arrival": {
+        "airport": "Istanbul Airport",
+        "iata": "IST",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T15:40:00+00:00",
+        "estimated": "2026-09-17T14:45:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 19,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "WS6307",
+      "flight_icao": "WJA6307",
+      "airline_name": "WestJet",
+      "airline_iata": "WS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E1",
+        "scheduled": "2026-09-16T21:40:00+00:00",
+        "estimated": "2026-09-16T21:40:00+00:00",
+        "actual": "2026-09-16T21:41:00+00:00",
+        "delay_minutes": 1
+      },
+      "arrival": {
+        "airport": "Lester B. Pearson International",
+        "iata": "YYZ",
+        "terminal": "3",
+        "gate": "B12",
+        "scheduled": "2026-09-16T23:59:00+00:00",
+        "estimated": "2026-09-16T23:29:00+00:00",
+        "actual": "2026-09-16T23:27:00+00:00",
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 1,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "WS6799",
+      "flight_icao": "WJA6799",
+      "airline_name": "WestJet",
+      "airline_iata": "WS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": "A18",
+        "scheduled": "2026-09-16T21:35:00+00:00",
+        "estimated": "2026-09-16T21:35:00+00:00",
+        "actual": null,
+        "delay_minutes": 21
+      },
+      "arrival": {
+        "airport": "Seattle-Tacoma International",
+        "iata": "SEA",
+        "terminal": null,
+        "gate": "A4",
+        "scheduled": "2026-09-16T23:58:00+00:00",
+        "estimated": null,
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 21,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "VS2684",
+      "flight_icao": "VIR2684",
+      "airline_name": "Virgin Atlantic",
+      "airline_iata": "VS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": "A18",
+        "scheduled": "2026-09-16T21:35:00+00:00",
+        "estimated": "2026-09-16T21:35:00+00:00",
+        "actual": null,
+        "delay_minutes": 21
+      },
+      "arrival": {
+        "airport": "Seattle-Tacoma International",
+        "iata": "SEA",
+        "terminal": null,
+        "gate": "A4",
+        "scheduled": "2026-09-16T23:58:00+00:00",
+        "estimated": null,
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 21,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "AM3704",
+      "flight_icao": "AMX3704",
+      "airline_name": "Aeromexico",
+      "airline_iata": "AM",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": "A18",
+        "scheduled": "2026-09-16T21:35:00+00:00",
+        "estimated": "2026-09-16T21:35:00+00:00",
+        "actual": null,
+        "delay_minutes": 21
+      },
+      "arrival": {
+        "airport": "Seattle-Tacoma International",
+        "iata": "SEA",
+        "terminal": null,
+        "gate": "A4",
+        "scheduled": "2026-09-16T23:58:00+00:00",
+        "estimated": null,
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 21,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "AF3487",
+      "flight_icao": "AFR3487",
+      "airline_name": "Air France",
+      "airline_iata": "AF",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "S",
+        "gate": "A18",
+        "scheduled": "2026-09-16T21:35:00+00:00",
+        "estimated": "2026-09-16T21:35:00+00:00",
+        "actual": null,
+        "delay_minutes": 21
+      },
+      "arrival": {
+        "airport": "Seattle-Tacoma International",
+        "iata": "SEA",
+        "terminal": null,
+        "gate": "A4",
+        "scheduled": "2026-09-16T23:58:00+00:00",
+        "estimated": null,
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 21,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "KE3765",
+      "flight_icao": "KAL3765",
+      "airline_name": "Korean Air",
+      "airline_iata": "KE",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E1",
+        "scheduled": "2026-09-16T21:40:00+00:00",
+        "estimated": "2026-09-16T21:40:00+00:00",
+        "actual": "2026-09-16T21:41:00+00:00",
+        "delay_minutes": 1
+      },
+      "arrival": {
+        "airport": "Lester B. Pearson International",
+        "iata": "YYZ",
+        "terminal": "3",
+        "gate": "B12",
+        "scheduled": "2026-09-16T23:59:00+00:00",
+        "estimated": "2026-09-16T23:29:00+00:00",
+        "actual": "2026-09-16T23:27:00+00:00",
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 1,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "AM4432",
+      "flight_icao": "AMX4432",
+      "airline_name": "Aeromexico",
+      "airline_iata": "AM",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E1",
+        "scheduled": "2026-09-16T21:40:00+00:00",
+        "estimated": "2026-09-16T21:40:00+00:00",
+        "actual": "2026-09-16T21:41:00+00:00",
+        "delay_minutes": 1
+      },
+      "arrival": {
+        "airport": "Lester B. Pearson International",
+        "iata": "YYZ",
+        "terminal": "3",
+        "gate": "B12",
+        "scheduled": "2026-09-16T23:59:00+00:00",
+        "estimated": "2026-09-16T23:29:00+00:00",
+        "actual": "2026-09-16T23:27:00+00:00",
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 1,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "KL6141",
+      "flight_icao": "KLM6141",
+      "airline_name": "KLM",
+      "airline_iata": "KL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E14",
+        "scheduled": "2026-09-16T21:25:00+00:00",
+        "estimated": "2026-09-16T21:25:00+00:00",
+        "actual": "2026-09-16T21:32:00+00:00",
+        "delay_minutes": 7
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "iata": "FCO",
+        "terminal": "3",
+        "gate": "E11",
+        "scheduled": "2026-09-17T12:40:00+00:00",
+        "estimated": "2026-09-17T12:21:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 7,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "AF9074",
+      "flight_icao": "AFR9074",
+      "airline_name": "Air France",
+      "airline_iata": "AF",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E14",
+        "scheduled": "2026-09-16T21:25:00+00:00",
+        "estimated": "2026-09-16T21:25:00+00:00",
+        "actual": "2026-09-16T21:32:00+00:00",
+        "delay_minutes": 7
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "iata": "FCO",
+        "terminal": "3",
+        "gate": "E11",
+        "scheduled": "2026-09-17T12:40:00+00:00",
+        "estimated": "2026-09-17T12:21:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 7,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "VS3630",
+      "flight_icao": "VIR3630",
+      "airline_name": "Virgin Atlantic",
+      "airline_iata": "VS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E9",
+        "scheduled": "2026-09-16T20:55:00+00:00",
+        "estimated": "2026-09-16T20:55:00+00:00",
+        "actual": "2026-09-16T20:59:00+00:00",
+        "delay_minutes": 4
+      },
+      "arrival": {
+        "airport": "Cote D'azur International Airport",
+        "iata": "NCE",
+        "terminal": "2",
+        "gate": "TBA",
+        "scheduled": "2026-09-17T12:00:00+00:00",
+        "estimated": "2026-09-17T11:28:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 4,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "KL6157",
+      "flight_icao": "KLM6157",
+      "airline_name": "KLM",
+      "airline_iata": "KL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E9",
+        "scheduled": "2026-09-16T20:55:00+00:00",
+        "estimated": "2026-09-16T20:55:00+00:00",
+        "actual": "2026-09-16T20:59:00+00:00",
+        "delay_minutes": 4
+      },
+      "arrival": {
+        "airport": "Cote D'azur International Airport",
+        "iata": "NCE",
+        "terminal": "2",
+        "gate": "TBA",
+        "scheduled": "2026-09-17T12:00:00+00:00",
+        "estimated": "2026-09-17T11:28:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 4,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "AF9091",
+      "flight_icao": "AFR9091",
+      "airline_name": "Air France",
+      "airline_iata": "AF",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E9",
+        "scheduled": "2026-09-16T20:55:00+00:00",
+        "estimated": "2026-09-16T20:55:00+00:00",
+        "actual": "2026-09-16T20:59:00+00:00",
+        "delay_minutes": 4
+      },
+      "arrival": {
+        "airport": "Cote D'azur International Airport",
+        "iata": "NCE",
+        "terminal": "2",
+        "gate": "TBA",
+        "scheduled": "2026-09-17T12:00:00+00:00",
+        "estimated": "2026-09-17T11:28:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 4,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "VS6793",
+      "flight_icao": "VIR6793",
+      "airline_name": "Virgin Atlantic",
+      "airline_iata": "VS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F6",
+        "scheduled": "2026-09-16T20:05:00+00:00",
+        "estimated": "2026-09-16T20:05:00+00:00",
+        "actual": "2026-09-16T20:22:00+00:00",
+        "delay_minutes": 17
+      },
+      "arrival": {
+        "airport": "Charles De Gaulle",
+        "iata": "CDG",
+        "terminal": "2E",
+        "gate": "F6",
+        "scheduled": "2026-09-17T10:30:00+00:00",
+        "estimated": "2026-09-17T10:06:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 17,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "KL2329",
+      "flight_icao": "KLM2329",
+      "airline_name": "KLM",
+      "airline_iata": "KL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F6",
+        "scheduled": "2026-09-16T20:05:00+00:00",
+        "estimated": "2026-09-16T20:05:00+00:00",
+        "actual": "2026-09-16T20:22:00+00:00",
+        "delay_minutes": 17
+      },
+      "arrival": {
+        "airport": "Charles De Gaulle",
+        "iata": "CDG",
+        "terminal": "2E",
+        "gate": "F6",
+        "scheduled": "2026-09-17T10:30:00+00:00",
+        "estimated": "2026-09-17T10:06:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 17,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "DL8703",
+      "flight_icao": "DAL8703",
+      "airline_name": "Delta Air Lines",
+      "airline_iata": "DL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F6",
+        "scheduled": "2026-09-16T20:05:00+00:00",
+        "estimated": "2026-09-16T20:05:00+00:00",
+        "actual": "2026-09-16T20:22:00+00:00",
+        "delay_minutes": 17
+      },
+      "arrival": {
+        "airport": "Charles De Gaulle",
+        "iata": "CDG",
+        "terminal": "2E",
+        "gate": "F6",
+        "scheduled": "2026-09-17T10:30:00+00:00",
+        "estimated": "2026-09-17T10:06:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 17,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "AF3568",
+      "flight_icao": "AFR3568",
+      "airline_name": "Air France",
+      "airline_iata": "AF",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E26",
+        "scheduled": "2026-09-16T20:00:00+00:00",
+        "estimated": "2026-09-16T20:00:00+00:00",
+        "actual": "2026-09-16T20:10:00+00:00",
+        "delay_minutes": 10
+      },
+      "arrival": {
+        "airport": "Dublin International",
+        "iata": "DUB",
+        "terminal": "2",
+        "gate": null,
+        "scheduled": "2026-09-17T08:45:00+00:00",
+        "estimated": "2026-09-17T08:06:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 10,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "KL6023",
+      "flight_icao": "KLM6023",
+      "airline_name": "KLM",
+      "airline_iata": "KL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E26",
+        "scheduled": "2026-09-16T20:00:00+00:00",
+        "estimated": "2026-09-16T20:00:00+00:00",
+        "actual": "2026-09-16T20:10:00+00:00",
+        "delay_minutes": 10
+      },
+      "arrival": {
+        "airport": "Dublin International",
+        "iata": "DUB",
+        "terminal": "2",
+        "gate": null,
+        "scheduled": "2026-09-17T08:45:00+00:00",
+        "estimated": "2026-09-17T08:06:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 10,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "VS3948",
+      "flight_icao": "VIR3948",
+      "airline_name": "Virgin Atlantic",
+      "airline_iata": "VS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E18",
+        "scheduled": "2026-09-16T19:50:00+00:00",
+        "estimated": "2026-09-16T19:50:00+00:00",
+        "actual": "2026-09-16T20:27:00+00:00",
+        "delay_minutes": 37
+      },
+      "arrival": {
+        "airport": "Schiphol",
+        "iata": "AMS",
+        "terminal": null,
+        "gate": "D49",
+        "scheduled": "2026-09-17T10:30:00+00:00",
+        "estimated": "2026-09-17T10:03:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 37,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "SV4493",
+      "flight_icao": "SVA4493",
+      "airline_name": "Saudia",
+      "airline_iata": "SV",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E18",
+        "scheduled": "2026-09-16T19:50:00+00:00",
+        "estimated": "2026-09-16T19:50:00+00:00",
+        "actual": "2026-09-16T20:27:00+00:00",
+        "delay_minutes": 37
+      },
+      "arrival": {
+        "airport": "Schiphol",
+        "iata": "AMS",
+        "terminal": null,
+        "gate": "D49",
+        "scheduled": "2026-09-17T10:30:00+00:00",
+        "estimated": "2026-09-17T10:03:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 37,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "KL6012",
+      "flight_icao": "KLM6012",
+      "airline_name": "KLM",
+      "airline_iata": "KL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E18",
+        "scheduled": "2026-09-16T19:50:00+00:00",
+        "estimated": "2026-09-16T19:50:00+00:00",
+        "actual": "2026-09-16T20:27:00+00:00",
+        "delay_minutes": 37
+      },
+      "arrival": {
+        "airport": "Schiphol",
+        "iata": "AMS",
+        "terminal": null,
+        "gate": "D49",
+        "scheduled": "2026-09-17T10:30:00+00:00",
+        "estimated": "2026-09-17T10:03:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 37,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "AF3655",
+      "flight_icao": "AFR3655",
+      "airline_name": "Air France",
+      "airline_iata": "AF",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E18",
+        "scheduled": "2026-09-16T19:50:00+00:00",
+        "estimated": "2026-09-16T19:50:00+00:00",
+        "actual": "2026-09-16T20:27:00+00:00",
+        "delay_minutes": 37
+      },
+      "arrival": {
+        "airport": "Schiphol",
+        "iata": "AMS",
+        "terminal": null,
+        "gate": "D49",
+        "scheduled": "2026-09-17T10:30:00+00:00",
+        "estimated": "2026-09-17T10:03:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 37,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "WS7079",
+      "flight_icao": "WJA7079",
+      "airline_name": "WestJet",
+      "airline_iata": "WS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "D16",
+        "scheduled": "2026-09-16T19:40:00+00:00",
+        "estimated": "2026-09-16T19:40:00+00:00",
+        "actual": "2026-09-16T20:12:00+00:00",
+        "delay_minutes": 32
+      },
+      "arrival": {
+        "airport": "Lester B. Pearson International",
+        "iata": "YYZ",
+        "terminal": "3",
+        "gate": "B12",
+        "scheduled": "2026-09-16T21:59:00+00:00",
+        "estimated": "2026-09-16T21:59:00+00:00",
+        "actual": "2026-09-16T21:55:00+00:00",
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 32,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "KE3796",
+      "flight_icao": "KAL3796",
+      "airline_name": "Korean Air",
+      "airline_iata": "KE",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "D16",
+        "scheduled": "2026-09-16T19:40:00+00:00",
+        "estimated": "2026-09-16T19:40:00+00:00",
+        "actual": "2026-09-16T20:12:00+00:00",
+        "delay_minutes": 32
+      },
+      "arrival": {
+        "airport": "Lester B. Pearson International",
+        "iata": "YYZ",
+        "terminal": "3",
+        "gate": "B12",
+        "scheduled": "2026-09-16T21:59:00+00:00",
+        "estimated": "2026-09-16T21:59:00+00:00",
+        "actual": "2026-09-16T21:55:00+00:00",
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 32,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "AM3944",
+      "flight_icao": "AMX3944",
+      "airline_name": "Aeromexico",
+      "airline_iata": "AM",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "D16",
+        "scheduled": "2026-09-16T19:40:00+00:00",
+        "estimated": "2026-09-16T19:40:00+00:00",
+        "actual": "2026-09-16T20:12:00+00:00",
+        "delay_minutes": 32
+      },
+      "arrival": {
+        "airport": "Lester B. Pearson International",
+        "iata": "YYZ",
+        "terminal": "3",
+        "gate": "B12",
+        "scheduled": "2026-09-16T21:59:00+00:00",
+        "estimated": "2026-09-16T21:59:00+00:00",
+        "actual": "2026-09-16T21:55:00+00:00",
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 32,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "KL6001",
+      "flight_icao": "KLM6001",
+      "airline_name": "KLM",
+      "airline_iata": "KL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E10",
+        "scheduled": "2026-09-16T19:25:00+00:00",
+        "estimated": "2026-09-16T19:25:00+00:00",
+        "actual": "2026-09-16T19:31:00+00:00",
+        "delay_minutes": 6
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "iata": "FCO",
+        "terminal": "3",
+        "gate": "E20",
+        "scheduled": "2026-09-17T10:50:00+00:00",
+        "estimated": "2026-09-17T10:35:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 6,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "AF3671",
+      "flight_icao": "AFR3671",
+      "airline_name": "Air France",
+      "airline_iata": "AF",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E10",
+        "scheduled": "2026-09-16T19:25:00+00:00",
+        "estimated": "2026-09-16T19:25:00+00:00",
+        "actual": "2026-09-16T19:31:00+00:00",
+        "delay_minutes": 6
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "iata": "FCO",
+        "terminal": "3",
+        "gate": "E20",
+        "scheduled": "2026-09-17T10:50:00+00:00",
+        "estimated": "2026-09-17T10:35:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 6,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "WB1085",
+      "flight_icao": "RWD1085",
+      "airline_name": "RwandAir",
+      "airline_iata": "WB",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F7",
+        "scheduled": "2026-09-16T19:10:00+00:00",
+        "estimated": "2026-09-16T19:10:00+00:00",
+        "actual": "2026-09-16T19:21:00+00:00",
+        "delay_minutes": 11
+      },
+      "arrival": {
+        "airport": "Doha International",
+        "iata": "DOH",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T16:05:00+00:00",
+        "estimated": "2026-09-17T15:20:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 11,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "UL3075",
+      "flight_icao": "ALK3075",
+      "airline_name": "SriLankan Airlines",
+      "airline_iata": "UL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F7",
+        "scheduled": "2026-09-16T19:10:00+00:00",
+        "estimated": "2026-09-16T19:10:00+00:00",
+        "actual": "2026-09-16T19:21:00+00:00",
+        "delay_minutes": 11
+      },
+      "arrival": {
+        "airport": "Doha International",
+        "iata": "DOH",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T16:05:00+00:00",
+        "estimated": "2026-09-17T15:20:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 11,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "MH9082",
+      "flight_icao": "MAS9082",
+      "airline_name": "Malaysia Airlines",
+      "airline_iata": "MH",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F7",
+        "scheduled": "2026-09-16T19:10:00+00:00",
+        "estimated": "2026-09-16T19:10:00+00:00",
+        "actual": "2026-09-16T19:21:00+00:00",
+        "delay_minutes": 11
+      },
+      "arrival": {
+        "airport": "Doha International",
+        "iata": "DOH",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T16:05:00+00:00",
+        "estimated": "2026-09-17T15:20:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 11,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "B65574",
+      "flight_icao": "JBU5574",
+      "airline_name": "JetBlue",
+      "airline_iata": "B6",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F7",
+        "scheduled": "2026-09-16T19:10:00+00:00",
+        "estimated": "2026-09-16T19:10:00+00:00",
+        "actual": "2026-09-16T19:21:00+00:00",
+        "delay_minutes": 11
+      },
+      "arrival": {
+        "airport": "Doha International",
+        "iata": "DOH",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T16:05:00+00:00",
+        "estimated": "2026-09-17T15:20:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 11,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "AS5808",
+      "flight_icao": "JAG5808",
+      "airline_name": "AlphaSky",
+      "airline_iata": "AS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F7",
+        "scheduled": "2026-09-16T19:10:00+00:00",
+        "estimated": "2026-09-16T19:10:00+00:00",
+        "actual": "2026-09-16T19:21:00+00:00",
+        "delay_minutes": 11
+      },
+      "arrival": {
+        "airport": "Doha International",
+        "iata": "DOH",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T16:05:00+00:00",
+        "estimated": "2026-09-17T15:20:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 11,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "AA8135",
+      "flight_icao": "AAL8135",
+      "airline_name": "American Airlines",
+      "airline_iata": "AA",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F7",
+        "scheduled": "2026-09-16T19:10:00+00:00",
+        "estimated": "2026-09-16T19:10:00+00:00",
+        "actual": "2026-09-16T19:21:00+00:00",
+        "delay_minutes": 11
+      },
+      "arrival": {
+        "airport": "Doha International",
+        "iata": "DOH",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T16:05:00+00:00",
+        "estimated": "2026-09-17T15:20:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 11,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "WY6218",
+      "flight_icao": "OMA6218",
+      "airline_name": "Oman Air",
+      "airline_iata": "WY",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F7",
+        "scheduled": "2026-09-16T19:10:00+00:00",
+        "estimated": "2026-09-16T19:10:00+00:00",
+        "actual": "2026-09-16T19:21:00+00:00",
+        "delay_minutes": 11
+      },
+      "arrival": {
+        "airport": "Doha International",
+        "iata": "DOH",
+        "terminal": null,
+        "gate": null,
+        "scheduled": "2026-09-17T16:05:00+00:00",
+        "estimated": "2026-09-17T15:20:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 11,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "LA6345",
+      "flight_icao": "LAN6345",
+      "airline_name": "LATAM Airlines",
+      "airline_iata": "LA",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E32",
+        "scheduled": "2026-09-16T19:00:00+00:00",
+        "estimated": "2026-09-16T19:00:00+00:00",
+        "actual": "2026-09-16T19:41:00+00:00",
+        "delay_minutes": 41
+      },
+      "arrival": {
+        "airport": "Aeroporto Internacional Guarulhos",
+        "iata": "GRU",
+        "terminal": "3",
+        "gate": "308",
+        "scheduled": "2026-09-17T05:40:00+00:00",
+        "estimated": "2026-09-17T05:50:00+00:00",
+        "actual": null,
+        "delay_minutes": 10
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 41,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "KE7289",
+      "flight_icao": "KAL7289",
+      "airline_name": "Korean Air",
+      "airline_iata": "KE",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E32",
+        "scheduled": "2026-09-16T19:00:00+00:00",
+        "estimated": "2026-09-16T19:00:00+00:00",
+        "actual": "2026-09-16T19:41:00+00:00",
+        "delay_minutes": 41
+      },
+      "arrival": {
+        "airport": "Aeroporto Internacional Guarulhos",
+        "iata": "GRU",
+        "terminal": "3",
+        "gate": "308",
+        "scheduled": "2026-09-17T05:40:00+00:00",
+        "estimated": "2026-09-17T05:50:00+00:00",
+        "actual": null,
+        "delay_minutes": 10
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 41,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "WS7924",
+      "flight_icao": "WJA7924",
+      "airline_name": "WestJet",
+      "airline_iata": "WS",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "A21",
+        "scheduled": "2026-09-16T21:15:00+00:00",
+        "estimated": "2026-09-16T21:15:00+00:00",
+        "actual": "2026-09-16T21:18:00+00:00",
+        "delay_minutes": 3
+      },
+      "arrival": {
+        "airport": "Pierre Elliott Trudeau International",
+        "iata": "YUL",
+        "terminal": null,
+        "gate": "C84",
+        "scheduled": "2026-09-16T23:50:00+00:00",
+        "estimated": "2026-09-16T23:30:00+00:00",
+        "actual": "2026-09-16T23:26:00+00:00",
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 3,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "KE3793",
+      "flight_icao": "KAL3793",
+      "airline_name": "Korean Air",
+      "airline_iata": "KE",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "A21",
+        "scheduled": "2026-09-16T21:15:00+00:00",
+        "estimated": "2026-09-16T21:15:00+00:00",
+        "actual": "2026-09-16T21:18:00+00:00",
+        "delay_minutes": 3
+      },
+      "arrival": {
+        "airport": "Pierre Elliott Trudeau International",
+        "iata": "YUL",
+        "terminal": null,
+        "gate": "C84",
+        "scheduled": "2026-09-16T23:50:00+00:00",
+        "estimated": "2026-09-16T23:30:00+00:00",
+        "actual": "2026-09-16T23:26:00+00:00",
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 3,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "AM5564",
+      "flight_icao": "AMX5564",
+      "airline_name": "Aeromexico",
+      "airline_iata": "AM",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "A21",
+        "scheduled": "2026-09-16T21:15:00+00:00",
+        "estimated": "2026-09-16T21:15:00+00:00",
+        "actual": "2026-09-16T21:18:00+00:00",
+        "delay_minutes": 3
+      },
+      "arrival": {
+        "airport": "Pierre Elliott Trudeau International",
+        "iata": "YUL",
+        "terminal": null,
+        "gate": "C84",
+        "scheduled": "2026-09-16T23:50:00+00:00",
+        "estimated": "2026-09-16T23:30:00+00:00",
+        "actual": "2026-09-16T23:26:00+00:00",
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 3,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "KL6079",
+      "flight_icao": "KLM6079",
+      "airline_name": "KLM",
+      "airline_iata": "KL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E27",
+        "scheduled": "2026-09-16T18:20:00+00:00",
+        "estimated": "2026-09-16T18:20:00+00:00",
+        "actual": "2026-09-16T18:37:00+00:00",
+        "delay_minutes": 17
+      },
+      "arrival": {
+        "airport": "Milano Malpensa",
+        "iata": "MXP",
+        "terminal": "1",
+        "gate": "B76",
+        "scheduled": "2026-09-17T09:25:00+00:00",
+        "estimated": "2026-09-17T09:05:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 17,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "AF3672",
+      "flight_icao": "AFR3672",
+      "airline_name": "Air France",
+      "airline_iata": "AF",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "E27",
+        "scheduled": "2026-09-16T18:20:00+00:00",
+        "estimated": "2026-09-16T18:20:00+00:00",
+        "actual": "2026-09-16T18:37:00+00:00",
+        "delay_minutes": 17
+      },
+      "arrival": {
+        "airport": "Milano Malpensa",
+        "iata": "MXP",
+        "terminal": "1",
+        "gate": "B76",
+        "scheduled": "2026-09-17T09:25:00+00:00",
+        "estimated": "2026-09-17T09:05:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 17,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "SV4828",
+      "flight_icao": "SVA4828",
+      "airline_name": "Saudia",
+      "airline_iata": "SV",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F2",
+        "scheduled": "2026-09-16T18:15:00+00:00",
+        "estimated": "2026-09-16T18:15:00+00:00",
+        "actual": "2026-09-16T18:35:00+00:00",
+        "delay_minutes": 20
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": null,
+        "scheduled": "2026-09-17T07:15:00+00:00",
+        "estimated": "2026-09-17T06:53:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 20,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "KL4821",
+      "flight_icao": "KLM4821",
+      "airline_name": "KLM",
+      "airline_iata": "KL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F2",
+        "scheduled": "2026-09-16T18:15:00+00:00",
+        "estimated": "2026-09-16T18:15:00+00:00",
+        "actual": "2026-09-16T18:35:00+00:00",
+        "delay_minutes": 20
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": null,
+        "scheduled": "2026-09-17T07:15:00+00:00",
+        "estimated": "2026-09-17T06:53:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 20,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "DL5998",
+      "flight_icao": "DAL5998",
+      "airline_name": "Delta Air Lines",
+      "airline_iata": "DL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F2",
+        "scheduled": "2026-09-16T18:15:00+00:00",
+        "estimated": "2026-09-16T18:15:00+00:00",
+        "actual": "2026-09-16T18:35:00+00:00",
+        "delay_minutes": 20
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": null,
+        "scheduled": "2026-09-17T07:15:00+00:00",
+        "estimated": "2026-09-17T06:53:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 20,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "AF9903",
+      "flight_icao": "AFR9903",
+      "airline_name": "Air France",
+      "airline_iata": "AF",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F2",
+        "scheduled": "2026-09-16T18:15:00+00:00",
+        "estimated": "2026-09-16T18:15:00+00:00",
+        "actual": "2026-09-16T18:35:00+00:00",
+        "delay_minutes": 20
+      },
+      "arrival": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "terminal": "3",
+        "gate": null,
+        "scheduled": "2026-09-17T07:15:00+00:00",
+        "estimated": "2026-09-17T06:53:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": true,
+      "max_delay_minutes": 20,
+      "delay_category": "moderate"
+    },
+    {
+      "flight_iata": "KL4823",
+      "flight_icao": "KLM4823",
+      "airline_name": "KLM",
+      "airline_iata": "KL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F4",
+        "scheduled": "2026-09-16T18:10:00+00:00",
+        "estimated": "2026-09-16T18:10:00+00:00",
+        "actual": "2026-09-16T18:23:00+00:00",
+        "delay_minutes": 13
+      },
+      "arrival": {
+        "airport": "Manchester Airport",
+        "iata": "MAN",
+        "terminal": "2",
+        "gate": null,
+        "scheduled": "2026-09-17T07:15:00+00:00",
+        "estimated": "2026-09-17T06:35:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 13,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "DL5986",
+      "flight_icao": "DAL5986",
+      "airline_name": "Delta Air Lines",
+      "airline_iata": "DL",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F4",
+        "scheduled": "2026-09-16T18:10:00+00:00",
+        "estimated": "2026-09-16T18:10:00+00:00",
+        "actual": "2026-09-16T18:23:00+00:00",
+        "delay_minutes": 13
+      },
+      "arrival": {
+        "airport": "Manchester Airport",
+        "iata": "MAN",
+        "terminal": "2",
+        "gate": null,
+        "scheduled": "2026-09-17T07:15:00+00:00",
+        "estimated": "2026-09-17T06:35:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 13,
+      "delay_category": "minor"
+    },
+    {
+      "flight_iata": "AF9907",
+      "flight_icao": "AFR9907",
+      "airline_name": "Air France",
+      "airline_iata": "AF",
+      "status": "active",
+      "departure": {
+        "airport": "Hartsfield-jackson Atlanta International",
+        "iata": "ATL",
+        "terminal": "I",
+        "gate": "F4",
+        "scheduled": "2026-09-16T18:10:00+00:00",
+        "estimated": "2026-09-16T18:10:00+00:00",
+        "actual": "2026-09-16T18:23:00+00:00",
+        "delay_minutes": 13
+      },
+      "arrival": {
+        "airport": "Manchester Airport",
+        "iata": "MAN",
+        "terminal": "2",
+        "gate": null,
+        "scheduled": "2026-09-17T07:15:00+00:00",
+        "estimated": "2026-09-17T06:35:00+00:00",
+        "actual": null,
+        "delay_minutes": 0
+      },
+      "aircraft_icao": null,
+      "is_delayed": false,
+      "max_delay_minutes": 13,
+      "delay_category": "minor"
+    }
+  ],
+  "summary": {
+    "date": "2026-09-17",
+    "collected_at": "2026-09-17T06:00:31.588852Z",
+    "totals": {
+      "flights": 100,
+      "delayed": 38,
+      "cancelled": 0,
+      "on_time": 62,
+      "delay_rate_pct": 38.0,
+      "avg_delay_minutes": 26.1
+    },
+    "delay_categories": {
+      "on_time": 4,
+      "minor": 58,
+      "moderate": 38,
+      "significant": 0,
+      "severe": 0
+    },
+    "by_airport": {
+      "ATL": {
+        "total": 100,
+        "delayed": 38,
+        "total_delay_minutes": 993,
+        "delay_rate_pct": 38.0,
+        "avg_delay_minutes": 26.1
+      }
+    },
+    "by_airline": {
+      "Qatar Airways": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "DHL Air": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 35,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 35.0
+      },
+      "Cargolux": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Atlas Air": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 29,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 29.0
+      },
+      "Virgin Atlantic": {
+        "total": 13,
+        "delayed": 5,
+        "total_delay_minutes": 129,
+        "delay_rate_pct": 38.5,
+        "avg_delay_minutes": 25.8
+      },
+      "KLM": {
+        "total": 15,
+        "delayed": 4,
+        "total_delay_minutes": 91,
+        "delay_rate_pct": 26.7,
+        "avg_delay_minutes": 22.8
+      },
+      "Air France": {
+        "total": 15,
+        "delayed": 5,
+        "total_delay_minutes": 125,
+        "delay_rate_pct": 33.3,
+        "avg_delay_minutes": 25.0
+      },
+      "Saudia": {
+        "total": 6,
+        "delayed": 3,
+        "total_delay_minutes": 87,
+        "delay_rate_pct": 50.0,
+        "avg_delay_minutes": 29.0
+      },
+      "SAS": {
+        "total": 2,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "LATAM Airlines": {
+        "total": 6,
+        "delayed": 3,
+        "total_delay_minutes": 96,
+        "delay_rate_pct": 50.0,
+        "avg_delay_minutes": 32.0
+      },
+      "Korean Air": {
+        "total": 7,
+        "delayed": 3,
+        "total_delay_minutes": 104,
+        "delay_rate_pct": 42.9,
+        "avg_delay_minutes": 34.7
+      },
+      "WestJet": {
+        "total": 5,
+        "delayed": 3,
+        "total_delay_minutes": 77,
+        "delay_rate_pct": 60.0,
+        "avg_delay_minutes": 25.7
+      },
+      "Aeromexico": {
+        "total": 7,
+        "delayed": 3,
+        "total_delay_minutes": 77,
+        "delay_rate_pct": 42.9,
+        "avg_delay_minutes": 25.7
+      },
+      "Delta Air Lines": {
+        "total": 5,
+        "delayed": 3,
+        "total_delay_minutes": 67,
+        "delay_rate_pct": 60.0,
+        "avg_delay_minutes": 22.3
+      },
+      "American Airlines": {
+        "total": 2,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Iberia": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Aer Lingus": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Finnair": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "RwandAir": {
+        "total": 2,
+        "delayed": 1,
+        "total_delay_minutes": 19,
+        "delay_rate_pct": 50.0,
+        "avg_delay_minutes": 19.0
+      },
+      "Thai Airways": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 19,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 19.0
+      },
+      "Pakistan International Airlines": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 19,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 19.0
+      },
+      "IndiGo": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 19,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 19.0
+      },
+      "SriLankan Airlines": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Malaysia Airlines": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "JetBlue": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "AlphaSky": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Oman Air": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      }
+    }
+  }
+}
