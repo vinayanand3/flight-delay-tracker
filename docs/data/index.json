@@ -46854,5 +46854,721 @@
         "avg_delay_minutes": 16.0
       }
     }
+  },
+  {
+    "date": "2026-11-10",
+    "collected_at": "2026-11-10T08:15:03.592498Z",
+    "totals": {
+      "flights": 820,
+      "delayed": 434,
+      "cancelled": 0,
+      "on_time": 386,
+      "delay_rate_pct": 52.9,
+      "avg_delay_minutes": 43.6
+    },
+    "delay_categories": {
+      "on_time": 53,
+      "minor": 333,
+      "moderate": 266,
+      "significant": 157,
+      "severe": 11
+    },
+    "by_airport": {
+      "ATL": {
+        "total": 100,
+        "delayed": 45,
+        "total_delay_minutes": 1377,
+        "delay_rate_pct": 45.0,
+        "avg_delay_minutes": 30.6
+      },
+      "ORD": {
+        "total": 100,
+        "delayed": 82,
+        "total_delay_minutes": 3339,
+        "delay_rate_pct": 82.0,
+        "avg_delay_minutes": 40.7
+      },
+      "DFW": {
+        "total": 100,
+        "delayed": 76,
+        "total_delay_minutes": 2964,
+        "delay_rate_pct": 76.0,
+        "avg_delay_minutes": 39.0
+      },
+      "DEN": {
+        "total": 100,
+        "delayed": 44,
+        "total_delay_minutes": 1922,
+        "delay_rate_pct": 44.0,
+        "avg_delay_minutes": 43.7
+      },
+      "LAS": {
+        "total": 99,
+        "delayed": 33,
+        "total_delay_minutes": 1005,
+        "delay_rate_pct": 33.3,
+        "avg_delay_minutes": 30.5
+      },
+      "CMH": {
+        "total": 30,
+        "delayed": 4,
+        "total_delay_minutes": 189,
+        "delay_rate_pct": 13.3,
+        "avg_delay_minutes": 47.2
+      },
+      "DTW": {
+        "total": 100,
+        "delayed": 31,
+        "total_delay_minutes": 1062,
+        "delay_rate_pct": 31.0,
+        "avg_delay_minutes": 34.3
+      },
+      "LGA": {
+        "total": 100,
+        "delayed": 97,
+        "total_delay_minutes": 5629,
+        "delay_rate_pct": 97.0,
+        "avg_delay_minutes": 58.0
+      },
+      "TPA": {
+        "total": 91,
+        "delayed": 22,
+        "total_delay_minutes": 1443,
+        "delay_rate_pct": 24.2,
+        "avg_delay_minutes": 65.6
+      }
+    },
+    "by_airline": {
+      "WestJet": {
+        "total": 38,
+        "delayed": 26,
+        "total_delay_minutes": 1223,
+        "delay_rate_pct": 68.4,
+        "avg_delay_minutes": 47.0
+      },
+      "Virgin Atlantic": {
+        "total": 47,
+        "delayed": 20,
+        "total_delay_minutes": 658,
+        "delay_rate_pct": 42.6,
+        "avg_delay_minutes": 32.9
+      },
+      "LATAM Airlines": {
+        "total": 20,
+        "delayed": 6,
+        "total_delay_minutes": 220,
+        "delay_rate_pct": 30.0,
+        "avg_delay_minutes": 36.7
+      },
+      "KLM": {
+        "total": 43,
+        "delayed": 18,
+        "total_delay_minutes": 664,
+        "delay_rate_pct": 41.9,
+        "avg_delay_minutes": 36.9
+      },
+      "Aeromexico": {
+        "total": 31,
+        "delayed": 12,
+        "total_delay_minutes": 383,
+        "delay_rate_pct": 38.7,
+        "avg_delay_minutes": 31.9
+      },
+      "Air France": {
+        "total": 33,
+        "delayed": 13,
+        "total_delay_minutes": 428,
+        "delay_rate_pct": 39.4,
+        "avg_delay_minutes": 32.9
+      },
+      "Saudia": {
+        "total": 9,
+        "delayed": 4,
+        "total_delay_minutes": 120,
+        "delay_rate_pct": 44.4,
+        "avg_delay_minutes": 30.0
+      },
+      "SAS": {
+        "total": 6,
+        "delayed": 2,
+        "total_delay_minutes": 40,
+        "delay_rate_pct": 33.3,
+        "avg_delay_minutes": 20.0
+      },
+      "American Airlines": {
+        "total": 38,
+        "delayed": 29,
+        "total_delay_minutes": 1509,
+        "delay_rate_pct": 76.3,
+        "avg_delay_minutes": 52.0
+      },
+      "Iberia": {
+        "total": 22,
+        "delayed": 15,
+        "total_delay_minutes": 553,
+        "delay_rate_pct": 68.2,
+        "avg_delay_minutes": 36.9
+      },
+      "Aer Lingus": {
+        "total": 13,
+        "delayed": 9,
+        "total_delay_minutes": 391,
+        "delay_rate_pct": 69.2,
+        "avg_delay_minutes": 43.4
+      },
+      "Finnair": {
+        "total": 13,
+        "delayed": 8,
+        "total_delay_minutes": 240,
+        "delay_rate_pct": 61.5,
+        "avg_delay_minutes": 30.0
+      },
+      "Thai Airways": {
+        "total": 3,
+        "delayed": 2,
+        "total_delay_minutes": 49,
+        "delay_rate_pct": 66.7,
+        "avg_delay_minutes": 24.5
+      },
+      "Pakistan International Airlines": {
+        "total": 3,
+        "delayed": 2,
+        "total_delay_minutes": 57,
+        "delay_rate_pct": 66.7,
+        "avg_delay_minutes": 28.5
+      },
+      "IndiGo": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Delta Air Lines": {
+        "total": 66,
+        "delayed": 39,
+        "total_delay_minutes": 2099,
+        "delay_rate_pct": 59.1,
+        "avg_delay_minutes": 53.8
+      },
+      "Korean Air": {
+        "total": 22,
+        "delayed": 8,
+        "total_delay_minutes": 349,
+        "delay_rate_pct": 36.4,
+        "avg_delay_minutes": 43.6
+      },
+      "RwandAir": {
+        "total": 3,
+        "delayed": 2,
+        "total_delay_minutes": 58,
+        "delay_rate_pct": 66.7,
+        "avg_delay_minutes": 29.0
+      },
+      "SriLankan Airlines": {
+        "total": 4,
+        "delayed": 3,
+        "total_delay_minutes": 79,
+        "delay_rate_pct": 75.0,
+        "avg_delay_minutes": 26.3
+      },
+      "Malaysia Airlines": {
+        "total": 12,
+        "delayed": 9,
+        "total_delay_minutes": 461,
+        "delay_rate_pct": 75.0,
+        "avg_delay_minutes": 51.2
+      },
+      "JetBlue": {
+        "total": 12,
+        "delayed": 5,
+        "total_delay_minutes": 206,
+        "delay_rate_pct": 41.7,
+        "avg_delay_minutes": 41.2
+      },
+      "AlphaSky": {
+        "total": 11,
+        "delayed": 6,
+        "total_delay_minutes": 285,
+        "delay_rate_pct": 54.5,
+        "avg_delay_minutes": 47.5
+      },
+      "Oman Air": {
+        "total": 3,
+        "delayed": 2,
+        "total_delay_minutes": 58,
+        "delay_rate_pct": 66.7,
+        "avg_delay_minutes": 29.0
+      },
+      "Air Transport International": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "FedEx": {
+        "total": 3,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Gulf Air": {
+        "total": 18,
+        "delayed": 11,
+        "total_delay_minutes": 413,
+        "delay_rate_pct": 61.1,
+        "avg_delay_minutes": 37.5
+      },
+      "British Airways": {
+        "total": 32,
+        "delayed": 22,
+        "total_delay_minutes": 951,
+        "delay_rate_pct": 68.8,
+        "avg_delay_minutes": 43.2
+      },
+      "Qatar Airways": {
+        "total": 14,
+        "delayed": 8,
+        "total_delay_minutes": 415,
+        "delay_rate_pct": 57.1,
+        "avg_delay_minutes": 51.9
+      },
+      "Porter Airlines Canada": {
+        "total": 7,
+        "delayed": 7,
+        "total_delay_minutes": 290,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 41.4
+      },
+      "Atlas Air": {
+        "total": 4,
+        "delayed": 2,
+        "total_delay_minutes": 222,
+        "delay_rate_pct": 50.0,
+        "avg_delay_minutes": 111.0
+      },
+      "Frontier": {
+        "total": 19,
+        "delayed": 8,
+        "total_delay_minutes": 347,
+        "delay_rate_pct": 42.1,
+        "avg_delay_minutes": 43.4
+      },
+      "Suparna Airlines": {
+        "total": 2,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "China Southern Airlines": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Volaris": {
+        "total": 19,
+        "delayed": 10,
+        "total_delay_minutes": 409,
+        "delay_rate_pct": 52.6,
+        "avg_delay_minutes": 40.9
+      },
+      "Nippon Cargo Airlines": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Viva": {
+        "total": 3,
+        "delayed": 3,
+        "total_delay_minutes": 249,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 83.0
+      },
+      "China Cargo Airlines": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Cargolux": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 259,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 259.0
+      },
+      "Copa Airlines": {
+        "total": 19,
+        "delayed": 7,
+        "total_delay_minutes": 245,
+        "delay_rate_pct": 36.8,
+        "avg_delay_minutes": 35.0
+      },
+      "Air Canada": {
+        "total": 22,
+        "delayed": 15,
+        "total_delay_minutes": 729,
+        "delay_rate_pct": 68.2,
+        "avg_delay_minutes": 48.6
+      },
+      "United Airlines": {
+        "total": 25,
+        "delayed": 9,
+        "total_delay_minutes": 279,
+        "delay_rate_pct": 36.0,
+        "avg_delay_minutes": 31.0
+      },
+      "Virgin Australia": {
+        "total": 2,
+        "delayed": 2,
+        "total_delay_minutes": 80,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 40.0
+      },
+      "Air New Zealand": {
+        "total": 4,
+        "delayed": 4,
+        "total_delay_minutes": 140,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 35.0
+      },
+      "Lufthansa": {
+        "total": 20,
+        "delayed": 15,
+        "total_delay_minutes": 625,
+        "delay_rate_pct": 75.0,
+        "avg_delay_minutes": 41.7
+      },
+      "Royal Jordanian": {
+        "total": 7,
+        "delayed": 6,
+        "total_delay_minutes": 203,
+        "delay_rate_pct": 85.7,
+        "avg_delay_minutes": 33.8
+      },
+      "Brussels Airlines": {
+        "total": 5,
+        "delayed": 2,
+        "total_delay_minutes": 78,
+        "delay_rate_pct": 40.0,
+        "avg_delay_minutes": 39.0
+      },
+      "Austrian Airlines": {
+        "total": 5,
+        "delayed": 2,
+        "total_delay_minutes": 78,
+        "delay_rate_pct": 40.0,
+        "avg_delay_minutes": 39.0
+      },
+      "Swiss": {
+        "total": 5,
+        "delayed": 3,
+        "total_delay_minutes": 111,
+        "delay_rate_pct": 60.0,
+        "avg_delay_minutes": 37.0
+      },
+      "Emirates": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 31,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 31.0
+      },
+      "ABX Air": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 22,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 22.0
+      },
+      "Qantas": {
+        "total": 3,
+        "delayed": 2,
+        "total_delay_minutes": 112,
+        "delay_rate_pct": 66.7,
+        "avg_delay_minutes": 56.0
+      },
+      "GOL": {
+        "total": 4,
+        "delayed": 2,
+        "total_delay_minutes": 84,
+        "delay_rate_pct": 50.0,
+        "avg_delay_minutes": 42.0
+      },
+      "Turkish Airlines": {
+        "total": 2,
+        "delayed": 2,
+        "total_delay_minutes": 60,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 30.0
+      },
+      "Uzbekistan Airways": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 19,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 19.0
+      },
+      "DHL Air": {
+        "total": 3,
+        "delayed": 3,
+        "total_delay_minutes": 89,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 29.7
+      },
+      "Cathay Pacific": {
+        "total": 8,
+        "delayed": 6,
+        "total_delay_minutes": 321,
+        "delay_rate_pct": 75.0,
+        "avg_delay_minutes": 53.5
+      },
+      "Japan Airlines": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 38,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 38.0
+      },
+      "Ethiopian Airlines": {
+        "total": 2,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Key Lime Air": {
+        "total": 3,
+        "delayed": 1,
+        "total_delay_minutes": 18,
+        "delay_rate_pct": 33.3,
+        "avg_delay_minutes": 18.0
+      },
+      "Sun Country Airlines": {
+        "total": 2,
+        "delayed": 1,
+        "total_delay_minutes": 30,
+        "delay_rate_pct": 50.0,
+        "avg_delay_minutes": 30.0
+      },
+      "Alpine Air Express": {
+        "total": 2,
+        "delayed": 1,
+        "total_delay_minutes": 35,
+        "delay_rate_pct": 50.0,
+        "avg_delay_minutes": 35.0
+      },
+      "Bemidji Aviation": {
+        "total": 2,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Southwest Airlines": {
+        "total": 43,
+        "delayed": 25,
+        "total_delay_minutes": 1125,
+        "delay_rate_pct": 58.1,
+        "avg_delay_minutes": 45.0
+      },
+      "SkyWest Airlines": {
+        "total": 2,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "TAP Air Portugal": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Etihad Airways": {
+        "total": 2,
+        "delayed": 1,
+        "total_delay_minutes": 27,
+        "delay_rate_pct": 50.0,
+        "avg_delay_minutes": 27.0
+      },
+      "Azul": {
+        "total": 2,
+        "delayed": 1,
+        "total_delay_minutes": 53,
+        "delay_rate_pct": 50.0,
+        "avg_delay_minutes": 53.0
+      },
+      "REACH Air Medical Services": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Porter": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 23,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 23.0
+      },
+      "Breeze Airways": {
+        "total": 6,
+        "delayed": 1,
+        "total_delay_minutes": 121,
+        "delay_rate_pct": 16.7,
+        "avg_delay_minutes": 121.0
+      },
+      "JSX": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Prestige Air Group": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 50,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 50.0
+      },
+      "GTA Air": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Quest Diagnostics": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "jetNEXA": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 100,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 100.0
+      },
+      "NetJets": {
+        "total": 11,
+        "delayed": 2,
+        "total_delay_minutes": 243,
+        "delay_rate_pct": 18.2,
+        "avg_delay_minutes": 121.5
+      },
+      "Flexjet": {
+        "total": 4,
+        "delayed": 1,
+        "total_delay_minutes": 47,
+        "delay_rate_pct": 25.0,
+        "avg_delay_minutes": 47.0
+      },
+      "Slate Aviation": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Vietnam Airlines": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "empty": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Solairus Aviation": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "VistaJet": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Labcorp": {
+        "total": 1,
+        "delayed": 1,
+        "total_delay_minutes": 29,
+        "delay_rate_pct": 100.0,
+        "avg_delay_minutes": 29.0
+      },
+      "Florida Tech College of Aeronautics": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "UPS": {
+        "total": 2,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "PlaneSense": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "El Al": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "avianca": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Discover Airlines": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      },
+      "Avelo Airlines": {
+        "total": 1,
+        "delayed": 0,
+        "total_delay_minutes": 0,
+        "delay_rate_pct": 0.0,
+        "avg_delay_minutes": 0.0
+      }
+    }
   }
 ]
